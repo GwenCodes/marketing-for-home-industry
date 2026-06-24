@@ -705,6 +705,41 @@ svg {
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
 }
+
+.booking-form {
+  width: 100%;
+  text-align: center;
+}
+.pack-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.payment-box {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
+  text-align: center;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fafafa;
+}
+.payment-note {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.payment-box {
+  text-align: left;
+}
+
+.payment-box h3,
+.payment-box h4,
+.payment-box p {
+  text-align: center;
+}
+
 .field {
   margin-bottom: 1.25rem;
   display: flex;
@@ -883,7 +918,9 @@ svg {
     grid-template-columns: 1fr;
   }
   .form-row {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
   body {
     background-image:
@@ -915,5 +952,10 @@ svg {
   }
   .booking-form {
     padding: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
