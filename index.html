@@ -155,7 +155,7 @@
           <div class="about-photo-wrap">
             <div class="about-photo">
               <img
-                src="/public/images/about-photo.png"
+                src="/src/images/about-photo.png"
                 alt="About photo"
                 class="about-photo-img"
               />
@@ -396,6 +396,15 @@
         <div class="booking-panels mt-8">
           <!-- PACK PANEL -->
           <div class="booking-panel is-active" id="panel-pack" role="tabpanel">
+            <p class="prefer-call mb-4">
+              Prefer to talk first?
+              <a href="mailto:showcase.by.gwen@gmail.com">Email me directly</a>.
+            </p>
+          </div>
+
+          <!-- NEW PANEL -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <!-- LEFT COLUMN: FORM -->
             <form class="booking-form" id="formPack" novalidate>
               <div class="form-row">
                 <div class="field">
@@ -463,31 +472,27 @@
                 ></textarea>
               </div>
 
-              <div class="payment-box mt-10 w-full flex justify-center">
-                <div class="w-full max-w-3xl text-center">
-                  <p class="payment-note mb-6">
-                    Secure payment — you'll get your private upload link right
-                    after checkout.
-                  </p>
-
-                  <div id="paypal-container-X6TAXT6M497H2"></div>
-                  <script>
-                    paypal
-                      .HostedButtons({
-                        hostedButtonId: "X6TAXT6M497H2",
-                      })
-                      .render("#paypal-container-X6TAXT6M497H2");
-                  </script>
-                </div>
-              </div>
-
               <p class="form-confirm" id="packConfirm" role="status"></p>
             </form>
 
-            <p class="prefer-call">
-              Prefer to talk first?
-              <a href="mailto:showcase.by.gwen@gmail.com">Email me directly</a>.
-            </p>
+            <!-- RIGHT COLUMN: PAYMENT -->
+            <div class="payment-box mt-10 w-full flex justify-center">
+              <div class="w-full max-w-3xl text-center">
+                <p class="payment-note mb-6">
+                  Secure payment — you'll get your private upload link right
+                  after checkout.
+                </p>
+
+                <div id="paypal-container-X6TAXT6M497H2"></div>
+                <script>
+                  paypal
+                    .HostedButtons({
+                      hostedButtonId: "X6TAXT6M497H2",
+                    })
+                    .render("#paypal-container-X6TAXT6M497H2");
+                </script>
+              </div>
+            </div>
           </div>
 
           <!-- CUSTOM PANEL -->
