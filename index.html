@@ -1,390 +1,619 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Essex Designs — Content That Gets Your Next Job Booked</title>
-  <meta name="description" content="Send up to 5 photos of your finished project. Get 16 ready-to-post pieces of content built to bring contractors, interior designers, and architects more leads.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Essex Designs LLC — Content That Gets Your Next Job Booked</title>
+    <meta
+      name="description"
+      content="Send up to 5 photos of your finished project. Get 16 ready-to-post pieces of content built to bring contractors, interior designers, and architects more leads."
+    />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Tailwind (spacing utilities only — all color/layout/typography is custom CSS) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      corePlugins: { preflight: false }
-    };
-  </script>
+    <!-- Tailwind (spacing utilities only — all color/layout/typography is custom CSS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false },
+      };
+    </script>
 
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAiW8gXkoWbZBfrDzNt-_hV5iihN9H6etrdX4ewmiQEaKQxh9zKeNlzprZudbMPfJc6TVUgMW-xI3lTow&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+  </head>
+  <body>
+    <!-- ============ NAV ============ -->
+    <header class="site-header" id="siteHeader">
+      <div class="nav-inner px-6 md:px-10 py-4">
+        <a href="#home" class="brand">
+          <span class="brand-name">Essex Designs LLC</span>
+          <span class="brand-sub">Web &amp; Content Studio</span>
+        </a>
 
-  <!-- ============ NAV ============ -->
-  <header class="site-header" id="siteHeader">
-    <div class="nav-inner px-6 md:px-10 py-4">
-      <a href="#home" class="brand">
-        <span class="brand-name">Essex Designs</span>
-        <span class="brand-sub">Web &amp; Content Studio</span>
-      </a>
+        <nav class="main-nav" id="mainNav">
+          <a href="#audience" class="px-3 py-2">Who It's For</a>
+          <a href="#spotlight-pack" class="px-3 py-2">Spotlight Pack</a>
+          <a href="#custom-work" class="px-3 py-2">Custom Work</a>
+          <a href="#booking" class="px-3 py-2 nav-cta-link">Book Now</a>
+        </nav>
 
-      <nav class="main-nav" id="mainNav">
-        <a href="#audience" class="px-3 py-2">Who It's For</a>
-        <a href="#spotlight-pack" class="px-3 py-2">Spotlight Pack</a>
-        <a href="#custom-work" class="px-3 py-2">Custom Work</a>
-        <a href="#booking" class="px-3 py-2 nav-cta-link">Book Now</a>
-      </nav>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero px-6 md:px-10 py-16 md:py-24" id="home">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Marketing for the trades</p>
+            <h1 class="hero-headline">
+              Your last job is your next lead — if you post it right.
+            </h1>
+            <p class="hero-sub mt-5">
+              Send up to 5 photos from one finished project. I'll turn them into
+              16 ready-to-post pieces of content — built to get you more calls,
+              more quotes, and more booked jobs.
+            </p>
 
-  <main>
-
-    <!-- ============ HERO ============ -->
-    <section class="hero px-6 md:px-10 py-16 md:py-24" id="home">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Marketing for the trades</p>
-          <h1 class="hero-headline">Your last job is your next lead — if you post it right.</h1>
-          <p class="hero-sub mt-5">
-            Send up to 5 photos from one finished project. I'll turn them into 16 ready-to-post
-            pieces of content — built to get you more calls, more quotes, and more booked jobs.
-          </p>
-
-          <div class="hero-actions mt-8">
-            <a href="#booking" class="btn btn-primary">Get the $599 Content Pack</a>
-            <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
-          </div>
-
-          <p class="hero-trust mt-6">
-            Built for contractors, interior designers &amp; architects who don't have time to be
-            their own marketing department.
-          </p>
-        </div>
-
-        <div class="hero-visual" aria-hidden="false">
-          <div class="contact-sheet">
-            <div class="cs-source">
-              <div class="cs-photo">
-                <svg viewBox="0 0 24 24" class="cs-photo-icon"><path d="M4 5h3l1.5-2h7L17 5h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 3.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" fill="currentColor"/></svg>
-                <span>Your project photo</span>
-              </div>
-              <span class="cs-pin"></span>
+            <div class="hero-actions mt-8">
+              <a href="#booking" class="btn btn-primary"
+                >Get the $599 Project SpotlightPack</a
+              >
+              <a href="#how-it-works" class="btn btn-secondary"
+                >See How It Works</a
+              >
             </div>
 
-            <div class="cs-arrow" aria-hidden="true">
-              <svg viewBox="0 0 60 24" preserveAspectRatio="none"><path d="M0 12 H50 M40 4 L52 12 L40 20" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+            <p class="hero-trust mt-6">
+              Built for contractors, interior designers &amp; architects who
+              don't have time to be their own marketing department.
+            </p>
+          </div>
+
+          <div class="hero-visual" aria-hidden="false">
+            <div class="contact-sheet">
+              <div class="cs-source">
+                <div class="cs-photo">
+                  <svg viewBox="0 0 24 24" class="cs-photo-icon">
+                    <path
+                      d="M4 5h3l1.5-2h7L17 5h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 3.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span>Your project photo</span>
+                </div>
+                <span class="cs-pin"></span>
+              </div>
+
+              <div class="cs-arrow" aria-hidden="true">
+                <svg viewBox="0 0 60 24" preserveAspectRatio="none">
+                  <path
+                    d="M0 12 H50 M40 4 L52 12 L40 20"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    fill="none"
+                  />
+                </svg>
+              </div>
+
+              <div class="cs-grid">
+                <div class="cs-row">
+                  <span class="cs-tag">FB</span>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                </div>
+                <div class="cs-row">
+                  <span class="cs-tag">IG</span>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                </div>
+                <div class="cs-row">
+                  <span class="cs-tag">EDU</span>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                </div>
+                <div class="cs-row">
+                  <span class="cs-tag">INSPO</span>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                  <div class="cs-cell"></div>
+                </div>
+              </div>
+            </div>
+            <p class="cs-caption">
+              1 photo set → 16 posts, sorted &amp; ready to publish
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FACE / ABOUT ============ -->
+      <section class="about px-6 md:px-10 py-16">
+        <div class="about-grid">
+          <div class="about-photo-wrap">
+            <div class="about-photo">
+              <img
+                src="/images/about-photo.png"
+                alt="About photo"
+                class="about-photo-img"
+              />
             </div>
 
-            <div class="cs-grid">
-              <div class="cs-row">
-                <span class="cs-tag">FB</span>
-                <div class="cs-cell"></div><div class="cs-cell"></div><div class="cs-cell"></div><div class="cs-cell"></div>
-              </div>
-              <div class="cs-row">
-                <span class="cs-tag">IG</span>
-                <div class="cs-cell"></div><div class="cs-cell"></div><div class="cs-cell"></div><div class="cs-cell"></div>
-              </div>
-              <div class="cs-row">
-                <span class="cs-tag">EDU</span>
-                <div class="cs-cell"></div><div class="cs-cell"></div><div class="cs-cell"></div><div class="cs-cell"></div>
-              </div>
-              <div class="cs-row">
-                <span class="cs-tag">INSPO</span>
-                <div class="cs-cell"></div><div class="cs-cell"></div><div class="cs-cell"></div><div class="cs-cell"></div>
-              </div>
+            <span class="about-tape about-tape-l"></span>
+            <span class="about-tape about-tape-r"></span>
+          </div>
+
+          <div class="about-copy">
+            <p class="eyebrow">Who's behind this</p>
+            <h2>Hi, I'm Gwendolyn.</h2>
+            <p class="mt-4">
+              I build websites and content for people who are excellent at their
+              trade and have absolutely no time to write captions about it.
+            </p>
+            <p>
+              After years in sales, I've learned that having leads is essential
+              for keeping your business running. One effective method to grab
+              attention in your local community is by using images already in
+              your phone.
+            </p>
+            <p class="mt-4">
+              If your site's a little dated and your socials have gone quiet,
+              that's normal. It's also fixable. That's what the two services
+              below are for.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ AUDIENCE ============ -->
+      <section class="audience px-6 md:px-10 py-16" id="audience">
+        <div class="section-head">
+          <p class="eyebrow">Who this is for</p>
+          <h2>You build the projects. I'll build the buzz.</h2>
+          <p class="section-sub mt-4">
+            If any of this sounds familiar, you're in the right place.
+          </p>
+        </div>
+
+        <div class="audience-grid mt-10">
+          <div class="audience-card p-7">
+            <h3>General Contractors &amp; Remodelers</h3>
+            <p class="mt-3">
+              You finish a beautiful renovation, snap a photo for your records,
+              and that's the last anyone sees of it. The job never makes it
+              online — so it never brings you another one.
+            </p>
+          </div>
+          <div class="audience-card p-7">
+            <h3>Interior Designers</h3>
+            <p class="mt-3">
+              Your portfolio is full of finished rooms, but your feed is empty.
+              Clients can't hire what they never see — and a quiet feed reads as
+              "not booking."
+            </p>
+          </div>
+          <div class="audience-card p-7">
+            <h3>Architects &amp; Design-Build Firms</h3>
+            <p class="mt-3">
+              Your work speaks for itself, if anyone's looking. A site that
+              hasn't changed in two years won't bring in the next RFP on its
+              own.
+            </p>
+          </div>
+        </div>
+
+        <p class="audience-note mt-10">
+          Sound familiar? Your website is probably fine — it just needs fresh,
+          consistent content behind it. That's where these two services come in.
+        </p>
+      </section>
+
+      <!-- ============ SERVICE 1: SPOTLIGHT PACK ============ -->
+      <section
+        class="service service-pack px-6 md:px-10 py-16"
+        id="spotlight-pack"
+      >
+        <div class="service-grid">
+          <div class="service-info">
+            <p class="eyebrow">Service 01</p>
+            <h2>The Project Spotlight Pack</h2>
+            <p class="service-tagline mt-3">
+              One finished project. One photo set. A month of content — done for
+              you.
+            </p>
+
+            <div class="price-tag mt-6">
+              <span class="price">$599</span>
+              <span class="price-period">one project, one flat fee</span>
+            </div>
+
+            <div class="service-block mt-8">
+              <h3 class="block-label">What you send</h3>
+              <p class="mt-2">
+                Up to 5 photos of one completed project. That's it.
+              </p>
+            </div>
+
+            <div class="service-block mt-6">
+              <h3 class="block-label">What you get — 16 posts</h3>
+              <ul class="deliverable-list mt-3">
+                <li>
+                  <span class="d-count">4</span> Facebook posts — written to get
+                  shares and comments from homeowners in your service area
+                </li>
+                <li>
+                  <span class="d-count">4</span> Instagram posts — captions and
+                  hashtag strategy built for visual discovery
+                </li>
+                <li>
+                  <span class="d-count">4</span> educational posts — short tips
+                  that position you as the expert, not just the crew that showed
+                  up
+                </li>
+                <li>
+                  <span class="d-count">4</span> inspirational posts —
+                  before-and-after style storytelling that sells the
+                  transformation
+                </li>
+              </ul>
+            </div>
+
+            <p class="turnaround mt-6">
+              Turnaround: 14 business days from when I receive your photos.
+            </p>
+
+            <a
+              href="#booking"
+              class="btn btn-primary mt-8"
+              data-tab-target="pack"
+              >Book My Spotlight Pack</a
+            >
+          </div>
+
+          <div class="service-visual">
+            <div class="how-it-works" id="how-it-works">
+              <p class="block-label">How it works</p>
+              <ol class="steps mt-4">
+                <li>
+                  <span class="step-num">1</span><span>Send your photos</span>
+                </li>
+                <li>
+                  <span class="step-num">2</span
+                  ><span>I write &amp; design all 16 posts</span>
+                </li>
+                <li>
+                  <span class="step-num">3</span
+                  ><span>You review and approve</span>
+                </li>
+                <li>
+                  <span class="step-num">4</span
+                  ><span>You post — leads start coming in</span>
+                </li>
+              </ol>
             </div>
           </div>
-          <p class="cs-caption">1 photo set → 16 posts, sorted &amp; ready to publish</p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ FACE / ABOUT ============ -->
-    <section class="about px-6 md:px-10 py-16">
-      <div class="about-grid">
-        <div class="about-photo-wrap">
-          <div class="about-photo">
-            <svg viewBox="0 0 24 24" class="about-photo-icon"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm0 2c-4.2 0-8 2.4-8 5.4V21h16v-1.6c0-3-3.8-5.4-8-5.4Z" fill="currentColor"/></svg>
-            <span>Add your photo here</span>
-          </div>
-          <span class="about-tape about-tape-l"></span>
-          <span class="about-tape about-tape-r"></span>
-        </div>
-
-        <div class="about-copy">
-          <p class="eyebrow">Who's behind this</p>
-          <h2>Hi, I'm Gwendolyn.</h2>
-          <p class="mt-4">
-            I build websites and content for people who are excellent at their trade and have
-            absolutely no time to write captions about it. I've spent years helping small
-            businesses turn finished work into a steady stream of leads — without adding
-            marketing to their already-full plate.
-          </p>
-          <p class="mt-4">
-            If your site's a little dated and your socials have gone quiet, that's normal. It's
-            also fixable. That's what the two services below are for.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ AUDIENCE ============ -->
-    <section class="audience px-6 md:px-10 py-16" id="audience">
-      <div class="section-head">
-        <p class="eyebrow">Who this is for</p>
-        <h2>You build the projects. I'll build the buzz.</h2>
-        <p class="section-sub mt-4">If any of this sounds familiar, you're in the right place.</p>
-      </div>
-
-      <div class="audience-grid mt-10">
-        <div class="audience-card p-7">
-          <h3>General Contractors &amp; Remodelers</h3>
-          <p class="mt-3">You finish a beautiful renovation, snap a photo for your records, and
-            that's the last anyone sees of it. The job never makes it online — so it never
-            brings you another one.</p>
-        </div>
-        <div class="audience-card p-7">
-          <h3>Interior Designers</h3>
-          <p class="mt-3">Your portfolio is full of finished rooms, but your feed is empty.
-            Clients can't hire what they never see — and a quiet feed reads as "not booking."</p>
-        </div>
-        <div class="audience-card p-7">
-          <h3>Architects &amp; Design-Build Firms</h3>
-          <p class="mt-3">Your work speaks for itself, if anyone's looking. A site that hasn't
-            changed in two years won't bring in the next RFP on its own.</p>
-        </div>
-      </div>
-
-      <p class="audience-note mt-10">
-        Sound familiar? Your website is probably fine — it just needs fresh, consistent content
-        behind it. That's where these two services come in.
-      </p>
-    </section>
-
-    <!-- ============ SERVICE 1: SPOTLIGHT PACK ============ -->
-    <section class="service service-pack px-6 md:px-10 py-16" id="spotlight-pack">
-      <div class="service-grid">
-        <div class="service-info">
-          <p class="eyebrow">Service 01</p>
-          <h2>The Project Spotlight Pack</h2>
-          <p class="service-tagline mt-3">One finished project. One photo set. A month of
-            content — done for you.</p>
-
-          <div class="price-tag mt-6">
-            <span class="price">$599</span>
-            <span class="price-period">one project, one flat fee</span>
-          </div>
-
-          <div class="service-block mt-8">
-            <h3 class="block-label">What you send</h3>
-            <p class="mt-2">Up to 5 photos of one completed project. That's it.</p>
-          </div>
-
-          <div class="service-block mt-6">
-            <h3 class="block-label">What you get — 16 posts</h3>
-            <ul class="deliverable-list mt-3">
-              <li><span class="d-count">4</span> Facebook posts — written to get shares and
-                comments from homeowners in your service area</li>
-              <li><span class="d-count">4</span> Instagram posts — captions and hashtag
-                strategy built for visual discovery</li>
-              <li><span class="d-count">4</span> educational posts — short tips that position
-                you as the expert, not just the crew that showed up</li>
-              <li><span class="d-count">4</span> inspirational posts — before-and-after style
-                storytelling that sells the transformation</li>
+      <!-- ============ SERVICE 2: CUSTOM WORK ============ -->
+      <section
+        class="service service-custom px-6 md:px-10 py-16"
+        id="custom-work"
+      >
+        <div class="service-grid service-grid-reverse">
+          <div class="service-visual">
+            <ul class="custom-list">
+              <li>New website design, or a redesign of what you've got</li>
+              <li>Ongoing website management &amp; updates</li>
+              <li>Monthly content strategy &amp; social media management</li>
+              <li>SEO-minded copy built to bring in local search traffic</li>
             </ul>
           </div>
 
-          <p class="turnaround mt-6">Turnaround: 5–7 business days from when I receive your
-            photos.</p>
+          <div class="service-info">
+            <p class="eyebrow">Service 02</p>
+            <h2>Need more than one project's worth?</h2>
+            <p class="service-tagline mt-3">
+              Custom website design, ongoing management, and full content
+              strategy — built around how you actually get leads.
+            </p>
 
-          <a href="#booking" class="btn btn-primary mt-8" data-tab-target="pack">Book My Spotlight Pack</a>
-        </div>
+            <div class="price-tag mt-6">
+              <span class="price">Custom pricing</span>
+              <span class="price-period">scoped to your business</span>
+            </div>
 
-        <div class="service-visual">
-          <div class="how-it-works" id="how-it-works">
-            <p class="block-label">How it works</p>
-            <ol class="steps mt-4">
-              <li><span class="step-num">1</span><span>Send your photos</span></li>
-              <li><span class="step-num">2</span><span>I write &amp; design all 16 posts</span></li>
-              <li><span class="step-num">3</span><span>You review and approve</span></li>
-              <li><span class="step-num">4</span><span>You post — leads start coming in</span></li>
-            </ol>
+            <p class="mt-6">
+              Every business is at a different stage — some need a full site
+              rebuild, some just need someone handling content every month.
+              We'll talk through where you are and build a plan and price around
+              that.
+            </p>
+
+            <a
+              href="#booking"
+              class="btn btn-secondary mt-8"
+              data-tab-target="custom"
+              >Request a Custom Quote</a
+            >
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ============ SERVICE 2: CUSTOM WORK ============ -->
-    <section class="service service-custom px-6 md:px-10 py-16" id="custom-work">
-      <div class="service-grid service-grid-reverse">
-        <div class="service-visual">
-          <ul class="custom-list">
-            <li>New website design, or a redesign of what you've got</li>
-            <li>Ongoing website management &amp; updates</li>
-            <li>Monthly content strategy &amp; social media management</li>
-            <li>SEO-minded copy built to bring in local search traffic</li>
-          </ul>
-        </div>
-
-        <div class="service-info">
-          <p class="eyebrow">Service 02</p>
-          <h2>Need more than one project's worth?</h2>
-          <p class="service-tagline mt-3">Custom website design, ongoing management, and full
-            content strategy — built around how you actually get leads.</p>
-
-          <div class="price-tag mt-6">
-            <span class="price">Custom pricing</span>
-            <span class="price-period">scoped to your business</span>
-          </div>
-
-          <p class="mt-6">
-            Every business is at a different stage — some need a full site rebuild, some just
-            need someone handling content every month. We'll talk through where you are and
-            build a plan and price around that.
+      <!-- ============ BOOKING & PAYMENT ============ -->
+      <section class="booking px-6 md:px-10 py-16" id="booking">
+        <div class="section-head">
+          <p class="eyebrow">Ready when you are</p>
+          <h2>Let's get your next project online.</h2>
+          <p class="section-sub mt-4">
+            Pick the option that fits — I'll follow up within 1 business day.
           </p>
-
-          <a href="#booking" class="btn btn-secondary mt-8" data-tab-target="custom">Request a Custom Quote</a>
         </div>
-      </div>
-    </section>
 
-    <!-- ============ BOOKING & PAYMENT ============ -->
-    <section class="booking px-6 md:px-10 py-16" id="booking">
-      <div class="section-head">
-        <p class="eyebrow">Ready when you are</p>
-        <h2>Let's get your next project online.</h2>
-        <p class="section-sub mt-4">Pick the option that fits — I'll follow up within 1
-          business day.</p>
-      </div>
+        <div class="booking-tabs mt-10" role="tablist">
+          <button
+            class="tab-btn is-active"
+            id="tabBtnPack"
+            data-tab="pack"
+            role="tab"
+            aria-selected="true"
+          >
+            $599 Spotlight Pack
+          </button>
+          <button
+            class="tab-btn"
+            id="tabBtnCustom"
+            data-tab="custom"
+            role="tab"
+            aria-selected="false"
+          >
+            Custom Quote
+          </button>
+        </div>
 
-      <div class="booking-tabs mt-10" role="tablist">
-        <button class="tab-btn is-active" id="tabBtnPack" data-tab="pack" role="tab" aria-selected="true">
-          $599 Spotlight Pack
-        </button>
-        <button class="tab-btn" id="tabBtnCustom" data-tab="custom" role="tab" aria-selected="false">
-          Custom Quote
-        </button>
-      </div>
-
-      <div class="booking-panels mt-8">
-
-        <!-- PACK PANEL -->
-        <div class="booking-panel is-active" id="panel-pack" role="tabpanel">
-          <form class="booking-form" id="formPack" novalidate>
-            <div class="form-row">
-              <div class="field">
-                <label for="packName">Name</label>
-                <input type="text" id="packName" name="name" required>
+        <div class="booking-panels mt-8">
+          <!-- PACK PANEL -->
+          <div class="booking-panel is-active" id="panel-pack" role="tabpanel">
+            <form class="booking-form" id="formPack" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="packName">Name</label>
+                  <input
+                    autocomplete="on"
+                    type="text"
+                    id="packName"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="packEmail">Email</label>
+                  <input
+                    autocomplete="on"
+                    type="email"
+                    id="packEmail"
+                    name="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="packBusiness">Business name</label>
+                  <input
+                    autocomplete="on"
+                    type="text"
+                    id="packBusiness"
+                    name="business"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="packPhone">Phone</label>
+                  <input
+                    type="tel"
+                    id="packPhone"
+                    name="phone"
+                    autocomplete="on"
+                  />
+                </div>
               </div>
               <div class="field">
-                <label for="packEmail">Email</label>
-                <input type="email" id="packEmail" name="email" required>
+                <label for="packPhotos"
+                  >How many photos will you send? (up to 5)</label
+                >
+                <input
+                  type="number"
+                  id="packPhotos"
+                  name="photos"
+                  min="1"
+                  max="5"
+                  value="5"
+                />
               </div>
-            </div>
-            <div class="form-row">
               <div class="field">
-                <label for="packBusiness">Business name</label>
-                <input type="text" id="packBusiness" name="business" required>
+                <label for="packProject">Tell me about the project</label>
+                <textarea
+                  id="packProject"
+                  name="project"
+                  rows="3"
+                  placeholder="e.g. full kitchen remodel, Edison NJ, finished last week"
+                ></textarea>
               </div>
-              <div class="field">
-                <label for="packPhone">Phone</label>
-                <input type="tel" id="packPhone" name="phone">
-              </div>
-            </div>
-            <div class="field">
-              <label for="packPhotos">How many photos will you send? (up to 5)</label>
-              <input type="number" id="packPhotos" name="photos" min="1" max="5" value="5">
-            </div>
-            <div class="field">
-              <label for="packProject">Tell me about the project</label>
-              <textarea id="packProject" name="project" rows="3" placeholder="e.g. full kitchen remodel, Edison NJ, finished last week"></textarea>
-            </div>
 
-            <div class="payment-box mt-6">
-              <p class="payment-note">Secure payment — you'll get your private upload link
-                right after checkout.</p>
-              <button type="submit" class="btn btn-primary btn-pay" id="payButton">
-                Pay $599 &amp; Reserve My Spot
+              <div class="payment-box mt-10 w-full flex justify-center">
+                <div class="w-full max-w-3xl text-center">
+                  <p class="payment-note mb-6">
+                    Secure payment — you'll get your private upload link right
+                    after checkout.
+                  </p>
+
+                  <div id="paypal-container-X6TAXT6M497H2"></div>
+                  <script>
+                    paypal
+                      .HostedButtons({
+                        hostedButtonId: "X6TAXT6M497H2",
+                      })
+                      .render("#paypal-container-X6TAXT6M497H2");
+                  </script>
+                </div>
+              </div>
+
+              <p class="form-confirm" id="packConfirm" role="status"></p>
+            </form>
+
+            <p class="prefer-call">
+              Prefer to talk first?
+              <a href="mailto:showcase.by.gwen@gmail.com">Email me directly</a>.
+            </p>
+          </div>
+
+          <!-- CUSTOM PANEL -->
+          <div class="booking-panel" id="panel-custom" role="tabpanel">
+            <form class="booking-form" id="formCustom" novalidate>
+              <div class="form-row">
+                <div class="field">
+                  <label for="custName">Name</label>
+                  <input
+                    type="text"
+                    id="custName"
+                    name="name"
+                    required
+                    autocomplete="on"
+                  />
+                </div>
+                <div class="field">
+                  <label for="custEmail">Email</label>
+                  <input
+                    type="email"
+                    id="custEmail"
+                    name="email"
+                    required
+                    autocomplete="on"
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="custBusiness">Business name</label>
+                  <input
+                    autocomplete="on"
+                    type="text"
+                    id="custBusiness"
+                    name="business"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="custPhone">Phone</label>
+                  <input
+                    type="tel"
+                    id="custPhone"
+                    name="phone"
+                    autocomplete="on"
+                  />
+                </div>
+              </div>
+
+              <fieldset class="field checkbox-group">
+                <legend>What do you need help with?</legend>
+                <label
+                  ><input
+                    type="checkbox"
+                    name="need"
+                    value="Website design or redesign"
+                  />
+                  Website design or redesign</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="need"
+                    value="Website management"
+                  />
+                  Website management</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="need"
+                    value="Content strategy and social management"
+                  />
+                  Content strategy &amp; social management</label
+                >
+                <label
+                  ><input type="checkbox" name="need" value="Something else" />
+                  Something else</label
+                >
+              </fieldset>
+
+              <div class="field">
+                <label for="custGoals">Tell me about your goals</label>
+                <textarea
+                  id="custGoals"
+                  name="goals"
+                  rows="3"
+                  placeholder="e.g. our site hasn't changed in 3 years and we want more residential leads"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary mt-4">
+                Send My Request
               </button>
-            </div>
-            <p class="form-confirm" id="packConfirm" role="status"></p>
-          </form>
-          <p class="prefer-call">Prefer to talk first? <a href="mailto:hello@essexdesigns.co">Email me directly</a>.</p>
+              <p class="form-confirm" id="customConfirm" role="status"></p>
+            </form>
+          </div>
         </div>
+      </section>
+    </main>
 
-        <!-- CUSTOM PANEL -->
-        <div class="booking-panel" id="panel-custom" role="tabpanel">
-          <form class="booking-form" id="formCustom" novalidate>
-            <div class="form-row">
-              <div class="field">
-                <label for="custName">Name</label>
-                <input type="text" id="custName" name="name" required>
-              </div>
-              <div class="field">
-                <label for="custEmail">Email</label>
-                <input type="email" id="custEmail" name="email" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="field">
-                <label for="custBusiness">Business name</label>
-                <input type="text" id="custBusiness" name="business" required>
-              </div>
-              <div class="field">
-                <label for="custPhone">Phone</label>
-                <input type="tel" id="custPhone" name="phone">
-              </div>
-            </div>
-
-            <fieldset class="field checkbox-group">
-              <legend>What do you need help with?</legend>
-              <label><input type="checkbox" name="need" value="Website design or redesign"> Website design or redesign</label>
-              <label><input type="checkbox" name="need" value="Website management"> Website management</label>
-              <label><input type="checkbox" name="need" value="Content strategy and social management"> Content strategy &amp; social management</label>
-              <label><input type="checkbox" name="need" value="Something else"> Something else</label>
-            </fieldset>
-
-            <div class="field">
-              <label for="custGoals">Tell me about your goals</label>
-              <textarea id="custGoals" name="goals" rows="3" placeholder="e.g. our site hasn't changed in 3 years and we want more residential leads"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary mt-4">Send My Request</button>
-            <p class="form-confirm" id="customConfirm" role="status"></p>
-          </form>
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer px-6 md:px-10 py-12">
+      <div class="footer-grid">
+        <div>
+          <span class="brand-name footer-brand">Essex Designs LLC</span>
+          <p class="footer-tagline mt-2">
+            Marketing for people who'd rather be on the jobsite.
+          </p>
         </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer px-6 md:px-10 py-12">
-    <div class="footer-grid">
-      <div>
-        <span class="brand-name footer-brand">Essex Designs</span>
-        <p class="footer-tagline mt-2">Marketing for people who'd rather be on the jobsite.</p>
-      </div>
-      <div class="footer-contact">
-        <a href="mailto:hello@essexdesigns.co">hello@essexdesigns.co</a>
-        <div class="footer-social mt-3">
-          <a href="#">Instagram</a>
-          <a href="#">Facebook</a>
-          <a href="#">LinkedIn</a>
+        <div class="footer-contact">
+          <a href="mailto:showcase.by.gwen@gmail.com"
+            >showcase.by.gwen@gmail.com</a
+          >
+          <!--<div class="footer-social mt-3">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+          </div>-->
         </div>
       </div>
-    </div>
-    <p class="footer-copy mt-8">&copy; <span id="year"></span> Essex Designs. All rights reserved.</p>
-  </footer>
+      <p class="footer-copy mt-8">
+        &copy; <span id="year"></span> Essex Designs LLC. All rights reserved.
+      </p>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
