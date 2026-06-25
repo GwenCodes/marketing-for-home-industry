@@ -1,7 +1,3 @@
-/* ===========================================================
-   ESSEX DESIGNS — Landing Page Script
-   =========================================================== */
-
 document.addEventListener("DOMContentLoaded", () => {
   /* ---------- footer year ---------- */
   const yearEl = document.getElementById("year");
@@ -10,8 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- sticky header shadow on scroll ---------- */
   const header = document.getElementById("siteHeader");
   const onScroll = () => {
-    if (window.scrollY > 8) header.classList.add("is-scrolled");
-    else header.classList.remove("is-scrolled");
+    if (header) {
+      if (window.scrollY > 8) header.classList.add("is-scrolled");
+      else header.classList.remove("is-scrolled");
+    }
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -19,48 +17,48 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- mobile menu toggle ---------- */
   const menuToggle = document.getElementById("menuToggle");
   const mainNav = document.getElementById("mainNav");
-  menuToggle.addEventListener("click", () => {
-    const isOpen = mainNav.classList.toggle("is-open");
-    menuToggle.classList.toggle("is-open", isOpen);
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-  });
-  // close mobile menu after tapping a nav link
-  mainNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mainNav.classList.remove("is-open");
-      menuToggle.classList.remove("is-open");
-      menuToggle.setAttribute("aria-expanded", "false");
+
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+      menuToggle.classList.toggle("is-open", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
     });
-  });
+
+    // close mobile menu after tapping a nav link
+    mainNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("is-open");
+        menuToggle.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 
   /* ---------- booking tabs ---------- */
-
   const packBtn = document.getElementById("tabBtnPack");
   const customBtn = document.getElementById("tabBtnCustom");
-
   const packPanel = document.getElementById("panel-pack");
   const customPanel = document.getElementById("panel-custom");
   const paymentWrapper = document.getElementById("paymentWrapper");
 
-  packBtn.addEventListener("click", () => {
-    packPanel.classList.add("is-active");
-    customPanel.classList.remove("is-active");
+  if (packBtn && customBtn && packPanel && customPanel && paymentWrapper) {
+    packBtn.addEventListener("click", () => {
+      packPanel.classList.add("is-active");
+      customPanel.classList.remove("is-active");
+      paymentWrapper.style.display = "flex";
+      packBtn.classList.add("is-active");
+      customBtn.classList.remove("is-active");
+    });
 
-    paymentWrapper.style.display = "flex";
-
-    packBtn.classList.add("is-active");
-    customBtn.classList.remove("is-active");
-  });
-
-  customBtn.addEventListener("click", () => {
-    customPanel.classList.add("is-active");
-    packPanel.classList.remove("is-active");
-
-    paymentWrapper.style.display = "none";
-
-    customBtn.classList.add("is-active");
-    packBtn.classList.remove("is-active");
-  });
+    customBtn.addEventListener("click", () => {
+      customPanel.classList.add("is-active");
+      packPanel.classList.remove("is-active");
+      paymentWrapper.style.display = "none";
+      customBtn.classList.add("is-active");
+      packBtn.classList.remove("is-active");
+    });
+  }
 
   /* =========================================================
      PAYMENT LINK — REPLACE BEFORE GOING LIVE
@@ -82,6 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "https://example.com/REPLACE_WITH_YOUR_FORM_ENDPOINT";
 
   function handleFormSubmit(form, confirmEl, message, redirectToPayment) {
+    if (!form || !confirmEl) return; // Prevent errors if elements don't exist
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -105,8 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       form.reset();
-      if (form.id === "formPack")
-        document.getElementById("packPhotos").value = 5;
+
+      const packPhotos = document.getElementById("packPhotos");
+      if (form.id === "formPack" && packPhotos) {
+        packPhotos.value = 5;
+      }
     });
   }
 

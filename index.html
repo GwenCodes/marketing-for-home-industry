@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
 
-    <!-- Tailwind (spacing utilities only — all color/layout/typography is custom CSS) -->
+    <!-- Tailwind (Spacing, Responsiveness, & Grid/Flex Layouts) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -31,45 +31,64 @@
   <body>
     <!-- ============ NAV ============ -->
     <header class="site-header" id="siteHeader">
-      <div class="nav-inner px-6 md:px-10 py-4">
-        <a href="#home" class="brand">
-          <span class="brand-name">Essex Designs LLC</span>
-          <span class="brand-sub mt-1">Web &amp; Content Studio</span>
-        </a>
+      <!-- Changed to flex-col to allow stacking on mobile, md:flex-row restores desktop behavior -->
+      <div
+        class="nav-inner max-w-[1200px] mx-auto px-6 md:px-10 py-4 flex flex-col md:flex-row md:items-center md:justify-between"
+      >
+        <!-- Row container for Logo and Hamburger on mobile -->
+        <div class="flex items-center justify-between w-full md:w-auto">
+          <a href="#home" class="brand flex flex-col">
+            <span class="brand-name">Essex Designs LLC</span>
+            <span class="brand-sub mt-1">Web &amp; Content Studio</span>
+          </a>
 
-        <nav class="main-nav" id="mainNav">
+          <button
+            class="menu-toggle md:hidden"
+            id="menuToggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <!-- Menu drops perfectly below the top row on mobile -->
+        <nav
+          class="main-nav flex-col gap-2 mt-4 md:mt-0 p-2 md:p-0 border-b border-solid md:border-none md:flex md:flex-row md:items-center"
+          id="mainNav"
+        >
           <a href="#audience" class="px-3 py-2">Who It's For</a>
           <a href="#spotlight-pack" class="px-3 py-2">The PSP</a>
-          <a href="#booking" class="px-3 py-2 nav-cta-link">Book Now</a>
+          <a
+            href="#booking"
+            class="hidden md:inline-block px-3 py-2 nav-cta-link"
+            >Book Now</a
+          >
         </nav>
-
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          aria-label="Open menu"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
-        </button>
       </div>
     </header>
 
     <main>
       <!-- ============ HERO ============ -->
-      <section class="hero px-6 md:px-10 py-16 md:py-24" id="home">
-        <div class="hero-grid">
-          <div class="hero-copy">
+      <section
+        class="hero-section max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-24"
+        id="home"
+      >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div class="hero-copy order-2 lg:order-1">
             <p class="eyebrow">Marketing for the trades</p>
-            <h1 class="hero-headline">
+            <h1 class="hero-headline mt-[0.7rem]">
               Your last job is your next lead — if you post it right.
             </h1>
-            <p class="hero-sub mt-5">
+            <p class="hero-sub mt-5 max-w-[540px]">
               Send up to 5 photos from one finished project. I'll turn them into
               16 ready-to-post pieces of content to get you more attention,
               leads and booked jobs.
             </p>
 
-            <div class="hero-actions mt-8">
+            <div class="flex flex-wrap gap-4 mt-8">
               <a href="#booking" class="btn btn-primary"
                 >Get the Project Spotlight Pack</a
               >
@@ -78,29 +97,43 @@
               >
             </div>
 
-            <p class="hero-trust mt-6">
+            <p class="hero-trust mt-6 max-w-[460px]">
               Built for contractors, interior designers &amp; architects who
               don't have time to be their own marketing department.
             </p>
           </div>
 
-          <div class="hero-visual" aria-hidden="false">
-            <div class="contact-sheet">
-              <div class="cs-source">
-                <div class="cs-photo">
+          <div
+            class="hero-visual flex flex-col items-center order-1 lg:order-2"
+            aria-hidden="false"
+          >
+            <div
+              class="contact-sheet flex flex-col sm:flex-row items-center gap-4 p-7 w-full"
+            >
+              <div class="cs-source flex-shrink-0 relative">
+                <div
+                  class="cs-photo flex flex-col items-center justify-center text-center gap-[0.4rem]"
+                >
                   <svg viewBox="0 0 24 24" class="cs-photo-icon">
                     <path
                       d="M4 5h3l1.5-2h7L17 5h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 3.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
                       fill="currentColor"
                     />
                   </svg>
-                  <span>Your project photo</span>
+                  <span class="px-[0.4rem]">Your project photo</span>
                 </div>
                 <span class="cs-pin"></span>
               </div>
 
-              <div class="cs-arrow" aria-hidden="true">
-                <svg viewBox="0 0 60 24" preserveAspectRatio="none">
+              <div
+                class="cs-arrow flex-shrink-0 rotate-90 sm:rotate-0"
+                aria-hidden="true"
+              >
+                <svg
+                  viewBox="0 0 60 24"
+                  preserveAspectRatio="none"
+                  class="w-full h-full"
+                >
                   <path
                     d="M0 12 H50 M40 4 L52 12 L40 20"
                     stroke="currentColor"
@@ -110,63 +143,66 @@
                 </svg>
               </div>
 
-              <div class="cs-grid">
-                <div class="cs-row">
+              <div
+                class="cs-grid flex flex-col gap-[0.55rem] flex-grow min-w-0 w-full sm:w-auto"
+              >
+                <div class="cs-row flex items-center gap-[0.4rem]">
                   <span class="cs-tag">FB</span>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
+                  <div class="cs-cell cs-cell-fb"></div>
+                  <div class="cs-cell cs-cell-fb"></div>
+                  <div class="cs-cell cs-cell-fb"></div>
+                  <div class="cs-cell cs-cell-fb"></div>
                 </div>
-                <div class="cs-row">
+                <div class="cs-row flex items-center gap-[0.4rem]">
                   <span class="cs-tag">IG</span>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
+                  <div class="cs-cell cs-cell-ig"></div>
+                  <div class="cs-cell cs-cell-ig"></div>
+                  <div class="cs-cell cs-cell-ig"></div>
+                  <div class="cs-cell cs-cell-ig"></div>
                 </div>
-                <div class="cs-row">
+                <div class="cs-row flex items-center gap-[0.4rem]">
                   <span class="cs-tag">EDU</span>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
+                  <div class="cs-cell cs-cell-edu"></div>
+                  <div class="cs-cell cs-cell-edu"></div>
+                  <div class="cs-cell cs-cell-edu"></div>
+                  <div class="cs-cell cs-cell-edu"></div>
                 </div>
-                <div class="cs-row">
+                <div class="cs-row flex items-center gap-[0.4rem]">
                   <span class="cs-tag">INSPO</span>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
-                  <div class="cs-cell"></div>
+                  <div class="cs-cell cs-cell-inspo"></div>
+                  <div class="cs-cell cs-cell-inspo"></div>
+                  <div class="cs-cell cs-cell-inspo"></div>
+                  <div class="cs-cell cs-cell-inspo"></div>
                 </div>
               </div>
             </div>
-            <p class="cs-caption">
+            <p class="cs-caption mt-4">
               1 photo set → 16 posts, sorted &amp; ready to publish
             </p>
           </div>
         </div>
       </section>
 
-      <!-- ============ FACE / ABOUT ============ -->
-      <section class="about px-6 md:px-10 py-16">
-        <div class="about-grid px-4 sm:px-12">
-          <div class="about-photo-wrap">
-            <div class="about-photo">
+      <!-- ============ ABOUT ============ -->
+      <section class="about-section px-6 md:px-10 py-16">
+        <div
+          class="max-w-[950px] mx-auto grid grid-cols-1 md:grid-cols-[220px_1fr] gap-20 items-center px-4 sm:px-12 text-center md:text-left"
+        >
+          <div class="about-photo-wrap justify-self-center mb-4 md:mb-0">
+            <div class="about-photo p-[12px_12px_28px]">
               <img
                 src="/src/images/about-photo.png"
                 alt="About photo"
                 class="about-photo-img"
               />
             </div>
-
             <span class="about-tape about-tape-l"></span>
             <span class="about-tape about-tape-r"></span>
           </div>
 
           <div class="about-copy">
             <p class="eyebrow">Who's behind this</p>
-            <h2>Hi, I'm Gwendolyn.</h2>
+            <h2 class="mt-[0.4rem]">Hi, I'm Gwendolyn.</h2>
             <p class="mt-4">
               I create content for people who are excellent at their trade and
               have absolutely no time to write captions about it.
@@ -188,16 +224,19 @@
       </section>
 
       <!-- ============ AUDIENCE ============ -->
-      <section class="audience px-6 md:px-10 py-16" id="audience">
-        <div class="section-head">
+      <section
+        class="audience-section max-w-[1200px] mx-auto px-6 md:px-10 py-16"
+        id="audience"
+      >
+        <div class="max-w-[640px]">
           <p class="eyebrow">Who this is for</p>
           <h2>You build the projects. <br />I'll build the buzz.</h2>
-          <p class="section-sub mt-4">
+          <p class="section-sub mt-4 text-[1.05rem]">
             If any of this sounds familiar, you're in the right place.
           </p>
         </div>
 
-        <div class="audience-grid mt-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
           <div class="audience-card p-7">
             <h3>General Contractors &amp; Remodelers</h3>
             <p class="mt-3">
@@ -212,7 +251,7 @@
               Clients don't know how they will benefit from your services.
             </p>
           </div>
-          <div class="audience-card p-7">
+          <div class="audience-card p-7 sm:col-span-2 lg:col-span-1">
             <h3>Architects &amp; Design-Build Firms</h3>
             <p class="mt-3">
               Your work speaks for itself, if only people knew about it.
@@ -221,95 +260,134 @@
         </div>
       </section>
 
-      <!-- ============ SERVICE 1: SPOTLIGHT PACK ============ -->
+      <!-- ============ SERVICES (SPOTLIGHT PACK) ============ -->
       <section
-        class="service service-pack px-6 md:px-10 py-16"
+        class="services-section service-pack max-w-full mx-auto px-6 md:px-10 py-16"
         id="spotlight-pack"
       >
-        <div class="service-grid">
-          <div class="service-info">
+        <!-- Main Grid container: Adjusted to a clean 55/45 split on large screens -->
+        <div
+          class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start"
+        >
+          <!-- Left Column: Big Value Pitch -->
+          <div class="service-info lg:pr-6">
             <h2>The Project Spotlight Pack</h2>
-            <p class="service-tagline mt-3">
-              One finished project. One photo set. A month of content done for
+
+            <!-- Standardized to clean, balanced text base sizes -->
+            <p class="mt-4 text-[1rem] leading-relaxed text-balance">
+              One finished project. One photo set. A month of localized,
+              high-impact content written, designed, and completely done for
               you.
             </p>
 
-            <div class="price-tag mt-6">
-              <span class="price">$599</span>
-              <span class="price-period">one project, one flat fee</span>
-            </div>
-
-            <div class="service-block mt-8">
-              <h3 class="block-label">What you send</h3>
-              <p class="mt-2">
-                Up to 5 photos of one completed project. That's it.
-              </p>
-            </div>
-
-            <div class="service-block mt-6">
-              <h3 class="block-label">What you get — 16 posts</h3>
-              <ul class="deliverable-list mt-3">
-                <li>
-                  <span class="d-count">4</span> Facebook posts written to get
-                  shares and comments from homeowners in your service area
-                </li>
-                <li>
-                  <span class="d-count">4</span> Instagram posts with captions
-                  and hashtag strategy built for visual discovery
-                </li>
-                <li>
-                  <span class="d-count">4</span> educational posts with tips
-                  that position you as the expert
-                </li>
-                <li>
-                  <span class="d-count">4</span> inspirational before-and-after
-                  posts that sells the finished outcome
-                </li>
-              </ul>
-            </div>
-
-            <p class="turnaround mt-6">
-              Turnaround: 14 business days from when I receive your photos.
+            <p
+              class="mt-4 text-[1rem] leading-relaxed text-balance text-gray-600"
+            >
+              Perfect for home service contractors, builders, and designers
+              looking to dominate local search discovery without adding to their
+              busy schedules.
             </p>
           </div>
 
-          <div class="service-visual">
-            <div class="how-it-works" id="how-it-works">
-              <p class="block-label">How it works</p>
-              <ol class="steps mt-4">
-                <li>
-                  <span class="step-num">1</span><span>Send your photos</span>
-                </li>
-                <li>
-                  <span class="step-num">2</span
-                  ><span>I write &amp; design all 16 posts</span>
-                </li>
-                <li>
-                  <span class="step-num">3</span
-                  ><span>You review and approve</span>
-                </li>
-                <li>
-                  <span class="step-num">4</span
-                  ><span>You post — leads start coming in</span>
-                </li>
-              </ol>
+          <!-- Right Column: The Product Summary Card -->
+          <div class="flex justify-center h-full">
+            <div
+              class="product-summary-card bg-[var(--color-cream-soft)] border border-solid border-[var(--color-light)] rounded-[var(--radius)] p-8 w-full h-fit shadow-sm"
+            >
+              <!-- Pricing Header Row -->
+              <div class="flex flex-col pb-5">
+                <h2 class="price font-extrabold tracking-tight">$599</h2>
+                <span
+                  class="price-period text-[0.9rem] uppercase tracking-wider mt-1 text-gray-500"
+                >
+                  one project, one flat fee
+                </span>
+              </div>
+
+              <!-- Input Section -->
+              <div class="mt-6">
+                <h3
+                  class="block-label text-sm uppercase tracking-wider font-semibold text-gray-500"
+                >
+                  What you send
+                </h3>
+                <p class="mt-2 text-[1rem] text-gray-700">
+                  Up to 5 photos of one completed project. That's it.
+                </p>
+              </div>
+
+              <!-- Output Deliverables Section -->
+              <div class="mt-8">
+                <h3
+                  class="block-label text-sm uppercase tracking-wider font-semibold text-gray-500"
+                >
+                  What you get — 16 posts
+                </h3>
+
+                <ul class="deliverable-list mt-4 space-y-4">
+                  <li class="pl-10 relative text-[0.95rem] leading-snug">
+                    <span
+                      class="d-count absolute left-0 top-0 flex items-center justify-center w-7 h-7 bg-[var(--color-primary)] text-white text-xs font-bold rounded-full"
+                      >4</span
+                    >
+                    <strong>Facebook posts</strong> written to drive shares and
+                    comments from local homeowners.
+                  </li>
+                  <li class="pl-10 relative text-[0.95rem] leading-snug">
+                    <span
+                      class="d-count absolute left-0 top-0 flex items-center justify-center w-7 h-7 bg-[var(--color-primary)] text-white text-xs font-bold rounded-full"
+                      >4</span
+                    >
+                    <strong>Instagram posts</strong> complete with
+                    high-converting visual captions and a tailored hashtag
+                    discovery strategy.
+                  </li>
+                  <li class="pl-10 relative text-[0.95rem] leading-snug">
+                    <span
+                      class="d-count absolute left-0 top-0 flex items-center justify-center w-7 h-7 bg-[var(--color-primary)] text-white text-xs font-bold rounded-full"
+                      >4</span
+                    >
+                    <strong>Educational tips</strong> and industry tricks that
+                    instantly establish your brand expertise.
+                  </li>
+                  <li class="pl-10 relative text-[0.95rem] leading-snug">
+                    <span
+                      class="d-count absolute left-0 top-0 flex items-center justify-center w-7 h-7 bg-[var(--color-primary)] text-white text-xs font-bold rounded-full"
+                      >4</span
+                    >
+                    <strong>Inspirational case studies</strong> showing off your
+                    dramatic before-and-after project transformations.
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Turnaround Footer Card -->
+              <div class="mt-8 pt-5">
+                <p class="turnaround text-[0.9rem] text-gray-500 italic">
+                  Turnaround: 14 business days from when your project photos are
+                  received.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-
       <!-- ============ BOOKING ============ -->
-      <section class="booking px-6 md:px-10 py-16" id="booking">
-        <div class="booking-panels mt-8">
-          <!-- ========================= -->
-          <!-- SPOTLIGHT PACK PANEL -->
-          <!-- ========================= -->
-          <div class="booking-panel is-active" id="panel-pack" role="tabpanel">
-            <div class="pack-container">
-              <form class="booking-form" id="formPack" novalidate>
+      <section
+        class="booking-section max-w-[1200px] mx-auto px-6 md:px-10 py-16"
+        id="booking"
+      >
+        <div class="mt-8">
+          <div class="block" id="panel-pack" role="tabpanel">
+            <div class="max-w-[700px] mx-auto">
+              <form
+                class="booking-form max-w-[640px] p-5 sm:p-8 mx-auto text-center"
+                id="formPack"
+                novalidate
+              >
                 <h2 class="form-title pb-8">Let's Get Started</h2>
-                <div class="form-row">
-                  <div class="field">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div class="field mb-[1.25rem] flex flex-col text-left">
                     <label for="packName">Name</label>
                     <input
                       autocomplete="on"
@@ -320,7 +398,7 @@
                     />
                   </div>
 
-                  <div class="field">
+                  <div class="field mb-[1.25rem] flex flex-col text-left">
                     <label for="packEmail">Email</label>
                     <input
                       autocomplete="on"
@@ -332,8 +410,8 @@
                   </div>
                 </div>
 
-                <div class="form-row">
-                  <div class="field">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div class="field mb-[1.25rem] flex flex-col text-left">
                     <label for="packBusiness">Business name</label>
                     <input
                       autocomplete="on"
@@ -344,7 +422,7 @@
                     />
                   </div>
 
-                  <div class="field">
+                  <div class="field mb-[1.25rem] flex flex-col text-left">
                     <label for="packPhone">Phone</label>
                     <input
                       autocomplete="on"
@@ -355,7 +433,7 @@
                   </div>
                 </div>
 
-                <div class="field">
+                <div class="field mb-[1.25rem] flex flex-col text-left">
                   <label for="packPhotos">
                     How many photos will you send? (up to 5)
                   </label>
@@ -369,7 +447,7 @@
                   />
                 </div>
 
-                <div class="field">
+                <div class="field mb-[1.25rem] flex flex-col text-left">
                   <label for="packProject"> Tell me about the project </label>
 
                   <textarea
@@ -380,25 +458,20 @@
                   ></textarea>
                 </div>
 
-                <p class="form-confirm" id="packConfirm" role="status"></p>
+                <p
+                  class="form-confirm mt-4 font-bold min-h-[1.2rem]"
+                  id="packConfirm"
+                  role="status"
+                ></p>
 
                 <div class="trust-bar">
                   <span>🔒 Secure Checkout</span>
                   <span>PayPal Buyer Protection</span>
                 </div>
-                <div class="paypal-wrapper pl-20">
-                  <div id="paypal-container-X6TAXT6M497H2"></div>
-                </div>
-                <script>
-                  paypal
-                    .HostedButtons({
-                      hostedButtonId: "X6TAXT6M497H2",
-                    })
-                    .render("#paypal-container-X6TAXT6M497H2");
-                </script>
+                <section>Paypal payment section</section>
               </form>
 
-              <p class="payment-footnote mt-9 text-center">
+              <p class="mt-9 text-center">
                 Questions before purchasing?
                 <a href="mailto:showcase.by.gwen@gmail.com"
                   >showcase.by.gwen@gmail.com
@@ -412,25 +485,22 @@
 
     <!-- ============ FOOTER ============ -->
     <footer class="site-footer px-6 md:px-10 py-12">
-      <div class="footer-grid">
+      <div class="max-w-[1200px] mx-auto flex flex-wrap justify-between gap-8">
         <div>
-          <span class="brand-name footer-brand">Essex Designs LLC</span>
+          <span class="brand-name footer-brand text-xl font-extrabold"
+            >Essex Designs LLC</span
+          >
           <p class="footer-tagline mt-2">
             Marketing for people who'd rather be on the jobsite.
           </p>
         </div>
-        <div class="footer-contact">
+        <div class="footer-contact font-semibold">
           <a href="mailto:showcase.by.gwen@gmail.com"
             >showcase.by.gwen@gmail.com</a
           >
-          <!--<div class="footer-social mt-3">
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <a href="#">LinkedIn</a>
-          </div>-->
         </div>
       </div>
-      <p class="footer-copy mt-8">
+      <p class="footer-copy max-w-[1200px] mx-auto mt-8 text-xs pt-6">
         &copy; <span id="year"></span> Essex Designs LLC. All rights reserved.
       </p>
     </footer>
