@@ -481,28 +481,116 @@
           </div>
         </div>
       </section>
+      <!-- ============ FAQ SECTION ============ -->
+      <section
+        class="faq-section max-w-full mx-auto px-6 md:px-10 py-16 border-t border-solid border-[var(--color-light)]"
+        id="faq"
+      >
+        <div class="max-w-[750px] mx-auto">
+          <!-- Section Header Block -->
+          <div class="text-center mb-12">
+            <h2 class="mt-2 font-extrabold tracking-tight">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <!-- Accordion Wrapper List -->
+          <div class="faq-accordion-group space-y-4">
+            <details
+              class="faq-item bg-[var(--color-cream-soft)] border border-solid border-[var(--color-light)] rounded-[var(--radius)] overflow-hidden"
+            >
+              <summary
+                class="flex justify-between items-center p-5 font-semibold text-[1.05rem] text-gray-900 cursor-pointer list-none select-none"
+              >
+                <span>Do I need professional photos?</span>
+                <span class="faq-arrow-icon"></span>
+              </summary>
+              <div
+                class="faq-content p-5 pt-0 border-t border-solid border-[var(--color-light)]/40"
+              >
+                <p class="mt-3 text-[1rem] leading-relaxed text-gray-600">
+                  No. Smartphone photos work great. A clear shot before you
+                  start and after you finish are great. Progress photos as the
+                  work happens is also helpful. Homeowners love seeing behind
+                  the scenes.
+                </p>
+              </div>
+            </details>
+
+            <details
+              class="faq-item bg-[var(--color-cream-soft)] border border-solid border-[var(--color-light)] rounded-[var(--radius)] overflow-hidden"
+            >
+              <summary
+                class="flex justify-between items-center p-5 font-semibold text-[1.05rem] text-gray-900 cursor-pointer list-none select-none"
+              >
+                <span>Do you post the content for me?</span>
+                <span class="faq-arrow-icon"></span>
+              </summary>
+              <div
+                class="faq-content p-5 pt-0 border-t border-solid border-[var(--color-light)]/40"
+              >
+                <p class="mt-3 text-[1rem] leading-relaxed text-gray-600">
+                  Not currently. We provide ready-to-post content that you
+                  publish on your own Facebook and Instagram accounts. Each post
+                  is fully written and formatted — just copy, paste, and share.
+                </p>
+              </div>
+            </details>
+
+            <details
+              class="faq-item bg-[var(--color-cream-soft)] border border-solid border-[var(--color-light)] rounded-[var(--radius)] overflow-hidden"
+            >
+              <summary
+                class="flex justify-between items-center p-5 font-semibold text-[1.05rem] text-gray-900 cursor-pointer list-none select-none"
+              >
+                <span>How quickly will I receive my content?</span>
+                <span class="faq-arrow-icon"></span>
+              </summary>
+              <div
+                class="faq-content p-5 pt-0 border-t border-solid border-[var(--color-light)]/40"
+              >
+                <p class="mt-3 text-[1rem] leading-relaxed text-gray-600">
+                  Within 14 business days of receiving your project information
+                  and photos. Most packs are delivered faster than that.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- ============ FOOTER ============ -->
     <footer class="site-footer px-6 md:px-10 py-12">
-      <div class="max-w-[1200px] mx-auto flex flex-wrap justify-between gap-8">
+      <!-- Changed container to a single-column flex structure centered horizontally -->
+      <div
+        class="max-w-[1200px] mx-auto flex flex-col items-center text-center gap-6"
+      >
+        <!-- Brand Block -->
         <div>
-          <span class="brand-name footer-brand text-xl font-extrabold"
-            >Essex Designs LLC</span
-          >
-          <p class="footer-tagline mt-2">
+          <span class="brand-name mt-3 footer-brand text-xl font-md">
+            Essex Designs LLC
+          </span>
+          <p class="footer-tagline mt-6 font-sm text-[1rem]">
             Marketing for people who'd rather be on the jobsite.
           </p>
         </div>
-        <div class="footer-contact font-semibold">
-          <a href="mailto:showcase.by.gwen@gmail.com"
-            >showcase.by.gwen@gmail.com</a
+
+        <!-- Contact Link -->
+        <p class="footer-contact mt-3 font-sm text-[1rem]">
+          <a
+            href="mailto:showcase.by.gwen@gmail.com"
+            class="hover:text-[var(--color-primary)] transition-colors duration-200"
           >
-        </div>
+            showcase.by.gwen@gmail.com
+          </a>
+        </p>
+
+        <!-- Copyright Block -->
+        <p class="footer-copy w-full mt-3 font-sm text-[1rem]">
+          &copy; <span id="year"></span> Essex Designs LLC. All rights reserved.
+        </p>
       </div>
-      <p class="footer-copy max-w-[1200px] mx-auto mt-8 text-xs pt-6">
-        &copy; <span id="year"></span> Essex Designs LLC. All rights reserved.
-      </p>
     </footer>
 
     <script src="script.js"></script>
