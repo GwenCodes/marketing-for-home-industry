@@ -73,7 +73,7 @@
     <main>
       <!-- ============ HERO ============ -->
       <section
-        class="hero-section max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-24"
+        class="hero-section max-w-[1200px] mx-auto px-6 md:px-0 py-16 md:py-24"
         id="home"
       >
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -103,82 +103,12 @@
             </p>
           </div>
 
-          <div
-            class="hero-visual flex flex-col items-center order-1 lg:order-2"
-            aria-hidden="false"
-          >
-            <div
-              class="contact-sheet flex flex-col sm:flex-row items-center gap-4 p-7 w-full"
-            >
-              <div class="cs-source flex-shrink-0 relative">
-                <div
-                  class="cs-photo flex flex-col items-center justify-center text-center gap-[0.4rem]"
-                >
-                  <svg viewBox="0 0 24 24" class="cs-photo-icon">
-                    <path
-                      d="M4 5h3l1.5-2h7L17 5h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm8 3.5a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  <span class="px-[0.4rem]">Your project photo</span>
-                </div>
-                <span class="cs-pin"></span>
-              </div>
-
-              <div
-                class="cs-arrow flex-shrink-0 rotate-90 sm:rotate-0"
-                aria-hidden="true"
-              >
-                <svg
-                  viewBox="0 0 60 24"
-                  preserveAspectRatio="none"
-                  class="w-full h-full"
-                >
-                  <path
-                    d="M0 12 H50 M40 4 L52 12 L40 20"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-
-              <div
-                class="cs-grid flex flex-col gap-[0.55rem] flex-grow min-w-0 w-full sm:w-auto"
-              >
-                <div class="cs-row flex items-center gap-[0.4rem]">
-                  <span class="cs-tag">FB</span>
-                  <div class="cs-cell cs-cell-fb"></div>
-                  <div class="cs-cell cs-cell-fb"></div>
-                  <div class="cs-cell cs-cell-fb"></div>
-                  <div class="cs-cell cs-cell-fb"></div>
-                </div>
-                <div class="cs-row flex items-center gap-[0.4rem]">
-                  <span class="cs-tag">IG</span>
-                  <div class="cs-cell cs-cell-ig"></div>
-                  <div class="cs-cell cs-cell-ig"></div>
-                  <div class="cs-cell cs-cell-ig"></div>
-                  <div class="cs-cell cs-cell-ig"></div>
-                </div>
-                <div class="cs-row flex items-center gap-[0.4rem]">
-                  <span class="cs-tag">EDU</span>
-                  <div class="cs-cell cs-cell-edu"></div>
-                  <div class="cs-cell cs-cell-edu"></div>
-                  <div class="cs-cell cs-cell-edu"></div>
-                  <div class="cs-cell cs-cell-edu"></div>
-                </div>
-                <div class="cs-row flex items-center gap-[0.4rem]">
-                  <span class="cs-tag">INSPO</span>
-                  <div class="cs-cell cs-cell-inspo"></div>
-                  <div class="cs-cell cs-cell-inspo"></div>
-                  <div class="cs-cell cs-cell-inspo"></div>
-                  <div class="cs-cell cs-cell-inspo"></div>
-                </div>
-              </div>
-            </div>
-            <p class="cs-caption mt-4">
-              1 photo set → 16 posts, sorted &amp; ready to publish
-            </p>
+          <div class="hero-visual order-1 lg:order-2 w-full">
+            <img
+              src="/src/images/project-spotlight-pack-hero.png"
+              alt="Project Spotlight visual"
+              class="w-full h-auto object-cover rounded-lg"
+            />
           </div>
         </div>
       </section>
