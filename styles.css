@@ -442,6 +442,7 @@ svg {
 }
 .deliverable-list li {
   color: #4a4541;
+  line-height: 1.5;
 }
 .d-count {
   position: absolute;
