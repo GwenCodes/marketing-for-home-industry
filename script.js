@@ -157,14 +157,17 @@ function prevStep(step) {
   showStep(step - 1);
 }
 
-function selectPackage(name, price) {
-  selectedPackage = name;
-  selectedPrice = price;
+function selectPackage(el, name, price) {
+  selectedPackage = { name, price };
 
-  document.getElementById("summary").innerHTML =
-    `Selected: <strong>${name}</strong> — $${price}`;
+  document.getElementById("summary").innerText =
+    "Selected: " + name + " ($" + price + ")";
 
-  renderPayPal(price);
+  document.querySelectorAll(".package-card").forEach((card) => {
+    card.classList.remove("active");
+  });
+
+  el.classList.add("active");
 }
 
 function renderPayPal(amount) {

@@ -690,7 +690,7 @@ svg {
 
 /* Package cards */
 .package-card {
-  border: 1px solid var(--color-light);
+  border: 2px solid var(--color-light);
   border-radius: var(--radius);
   padding: 1.5rem;
   background: var(--color-paper);
@@ -701,16 +701,18 @@ svg {
 .package-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-card-hover);
-}
-
-.package-card.featured {
-  border: 2px solid var(--color-primary);
+  border-color: rgba(200, 109, 47, 0.4);
 }
 
 .package-card .price {
   font-size: 1.8rem;
   font-weight: 800;
   color: var(--color-dark);
+}
+.package-card.active {
+  border-color: #c86d2f; /* your brand accent */
+  box-shadow: 0 10px 30px #a8501f;
+  transform: translateY(-2px);
 }
 
 /* Calendar */

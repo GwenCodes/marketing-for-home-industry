@@ -425,7 +425,10 @@
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Starter -->
-            <div class="package-card" onclick="selectPackage('Starter', 399)">
+            <div
+              class="package-card"
+              onclick="selectPackage(this, 'Starter', 399)"
+            >
               <h4>Starter</h4>
               <p class="price">$399</p>
               <ul>
@@ -439,8 +442,8 @@
 
             <!-- Growth -->
             <div
-              class="package-card featured"
-              onclick="selectPackage('Growth', 699)"
+              class="package-card"
+              onclick="selectPackage(this, 'Growth', 699)"
             >
               <h4>Growth</h4>
               <p class="price">$699</p>
