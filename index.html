@@ -29,7 +29,10 @@
     <script src="https://www.paypal.com/sdk/js?client-id=BAAiW8gXkoWbZBfrDzNt-_hV5iihN9H6etrdX4ewmiQEaKQxh9zKeNlzprZudbMPfJc6TVUgMW-xI3lTow&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
   </head>
   <body>
-    <!-- ============ NAV ============ -->
+    <!-- ==================================================
+     NAVIGATION
+     Matches CSS: NAVIGATION
+================================================== -->
     <header class="site-header" id="siteHeader">
       <!-- Changed to flex-col to allow stacking on mobile, md:flex-row restores desktop behavior -->
       <div
@@ -71,7 +74,10 @@
     </header>
 
     <main>
-      <!-- ============ HERO ============ -->
+      <!-- ==================================================
+     HERO
+     Matches CSS: HERO
+================================================== -->
       <section
         class="hero-section max-w-[1200px] mx-auto px-6 md:px-0 py-16 md:py-24"
         id="home"
@@ -107,7 +113,9 @@
         </div>
       </section>
 
-      <!-- ============ ABOUT ============ -->
+      <!-- ==================================================
+     ABOUT
+================================================== -->
       <section class="about-section px-6 md:px-10 py-16">
         <div
           class="max-w-[950px] mx-auto grid grid-cols-1 md:grid-cols-[220px_1fr] gap-20 items-center px-4 sm:px-12 text-center md:text-left"
@@ -144,7 +152,9 @@
         </div>
       </section>
 
-      <!-- ============ AUDIENCE ============ -->
+      <!-- ==================================================
+     AUDIENCE
+================================================== -->
       <section
         class="audience-section max-w-[1200px] mx-auto px-6 md:px-10 py-16"
         id="audience"
@@ -180,9 +190,9 @@
         </div>
       </section>
 
-      <!-- =========================
-     PRICING SECTION (NO DROPDOWN)
-========================= -->
+      <!-- ==================================================
+     SERVICES / PRICING
+================================================== -->
       <section class="services-section max-w-full mx-auto px-6 md:px-10 py-16">
         <h2
           class="text-3xl lg:text-4xl font-semibold text-center"
@@ -258,7 +268,9 @@
         </div>
       </section>
 
-      <!-- ============ FAQ SECTION ============ -->
+      <!-- ==================================================
+     FAQ
+================================================== -->
       <section
         class="faq-section max-w-full mx-auto px-6 md:px-10 py-16"
         id="faq"
@@ -335,9 +347,129 @@
           </div>
         </div>
       </section>
+      <!-- =========================
+     BOOKING WIZARD SECTION
+========================= -->
+      <section
+        class="booking-section max-w-[900px] mx-auto px-6 md:px-10 py-20"
+        id="booking"
+      >
+        <div class="booking-header text-center mb-10">
+          <h2>Book Your Project Spotlight Pack</h2>
+          <p class="section-sub mt-3">
+            Turn your completed project into a month of ready-to-post marketing.
+          </p>
+
+          <!-- Progress Bar -->
+          <div class="progress-bar mt-8">
+            <div class="progress-step active" id="stepIndicator1">1</div>
+            <div class="progress-line"></div>
+            <div class="progress-step" id="stepIndicator2">2</div>
+            <div class="progress-line"></div>
+            <div class="progress-step" id="stepIndicator3">3</div>
+          </div>
+        </div>
+
+        <!-- STEP 1 -->
+        <div class="booking-step" id="step1">
+          <h3 class="mb-6">1. Your Information</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input placeholder="First Name" class="booking-input" />
+            <input placeholder="Last Name" class="booking-input" />
+            <input placeholder="Email" class="booking-input" />
+            <input placeholder="Phone" class="booking-input" />
+            <input placeholder="Business Name" class="booking-input" />
+            <input placeholder="Instagram" class="booking-input" />
+            <input placeholder="Website" class="booking-input" />
+            <input placeholder="City / State" class="booking-input" />
+          </div>
+
+          <textarea
+            class="booking-textarea mt-4"
+            placeholder="Tell me about your project..."
+          ></textarea>
+
+          <button class="btn btn-primary mt-6" onclick="nextStep(1)">
+            Continue →
+          </button>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="booking-step hidden" id="step2">
+          <h3 class="mb-6">2. Pick a Date</h3>
+
+          <div class="calendar-box">
+            <!-- Replace with Google Calendar or Calendly embed -->
+            <iframe
+              src="https://calendar.google.com/calendar/appointments/schedules/..."
+              class="calendar-embed"
+            ></iframe>
+          </div>
+
+          <div class="flex justify-between mt-6">
+            <button class="btn btn-secondary" onclick="prevStep(2)">
+              ← Back
+            </button>
+            <button class="btn btn-primary" onclick="nextStep(2)">
+              Continue →
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="booking-step hidden" id="step3">
+          <h3 class="mb-6">3. Choose Your Package</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Starter -->
+            <div class="package-card" onclick="selectPackage('Starter', 399)">
+              <h4>Starter</h4>
+              <p class="price">$399</p>
+              <ul>
+                <li>8 Instagram Posts</li>
+                <li>Educational Content</li>
+                <li>Before & After Stories</li>
+                <li>Feature Highlights</li>
+              </ul>
+              <button>Select</button>
+            </div>
+
+            <!-- Growth -->
+            <div
+              class="package-card featured"
+              onclick="selectPackage('Growth', 699)"
+            >
+              <h4>Growth</h4>
+              <p class="price">$699</p>
+              <ul>
+                <li>16 Instagram Posts</li>
+                <li>Strategy Session (30 min)</li>
+                <li>Content Positioning</li>
+                <li>Lead-focused Messaging</li>
+              </ul>
+              <button>Select</button>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="summary mt-8" id="summary">Selected: None</div>
+
+          <!-- PayPal placeholder -->
+          <div id="paypal-container" class="mt-6"></div>
+
+          <div class="flex justify-between mt-6">
+            <button class="btn btn-secondary" onclick="prevStep(3)">
+              ← Back
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- ============ FOOTER ============ -->
+    <!-- ==================================================
+     FOOTER
+================================================== -->
     <footer class="site-footer px-6 md:px-10 py-12">
       <!-- Changed container to a single-column flex structure centered horizontally -->
       <div

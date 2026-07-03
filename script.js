@@ -130,3 +130,52 @@ document.addEventListener("DOMContentLoaded", () => {
     false,
   );
 });
+let currentStep = 1;
+let selectedPackage = null;
+let selectedPrice = 0;
+
+function showStep(step) {
+  document
+    .querySelectorAll(".booking-step")
+    .forEach((el) => el.classList.add("hidden"));
+  document.getElementById("step" + step).classList.remove("hidden");
+
+  // progress update
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById("stepIndicator" + i).classList.remove("active");
+  }
+  document.getElementById("stepIndicator" + step).classList.add("active");
+
+  currentStep = step;
+}
+
+function nextStep(step) {
+  showStep(step + 1);
+}
+
+function prevStep(step) {
+  showStep(step - 1);
+}
+
+function selectPackage(name, price) {
+  selectedPackage = name;
+  selectedPrice = price;
+
+  document.getElementById("summary").innerHTML =
+    `Selected: <strong>${name}</strong> — $${price}`;
+
+  renderPayPal(price);
+}
+
+function renderPayPal(amount) {
+  document.getElementById("paypal-container").innerHTML = "";
+
+  paypal
+    .HostedButtons({
+      hostedButtonId: "YOUR_BUTTON_ID",
+      onApprove: function () {
+        alert("Payment successful. I'll contact you shortly.");
+      },
+    })
+    .render("#paypal-container");
+}
