@@ -638,7 +638,7 @@ svg {
 /* ===================== BOOKING WIZARD ===================== */
 
 .booking-section {
-  background-color: var(--color-cream-soft);
+  background-color: white;
   border: 1px solid var(--color-light);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
