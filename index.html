@@ -456,7 +456,14 @@
           <div class="summary mt-8" id="summary">Selected: None</div>
 
           <!-- PayPal placeholder -->
-          <div id="paypal-container" class="mt-6"></div>
+          <div id="paypal-container-X6TAXT6M497H2" class="mt-6"></div>
+          <script>
+            paypal
+              .HostedButtons({
+                hostedButtonId: "X6TAXT6M497H2",
+              })
+              .render("#paypal-container-X6TAXT6M497H2");
+          </script>
 
           <div class="flex justify-between mt-6">
             <button class="btn btn-secondary" onclick="prevStep(3)">
