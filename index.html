@@ -79,7 +79,7 @@
      Matches CSS: HERO
 ================================================== -->
       <section
-        class="hero-section max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-32"
+        class="hero-section max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32"
         id="home"
       >
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -116,7 +116,9 @@
       <!-- ==================================================
      ABOUT
 ================================================== -->
-      <section class="about-section mx-auto px-6 md:px-10 py-16 md:py-32">
+      <section
+        class="about-section mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32"
+      >
         <div
           class="max-w-[950px] mx-auto grid grid-cols-1 md:grid-cols-[220px_1fr] gap-20 items-center px-4 sm:px-12 text-center md:text-left"
         >
@@ -156,7 +158,7 @@
      AUDIENCE
 ================================================== -->
       <section
-        class="audience-section max-w-[1200px] mx-auto px-6 md:px-16 md:py-32"
+        class="audience-section max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32"
         id="audience"
       >
         <div class="max-w-[640px]">
@@ -193,7 +195,9 @@
       <!-- ==================================================
      SERVICES / PRICING
 ================================================== -->
-      <section class="services-section mx-auto px-6 md:px-16 md:py-32">
+      <section
+        class="services-section mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32 border-t border-solid border-[var(--color-light)]"
+      >
         <h2 id="spotlight-pack" class="text-center">
           The Project Spotlight Pack
         </h2>
@@ -274,7 +278,10 @@
       <!-- ==================================================
      FAQ
 ================================================== -->
-      <section class="faq-section mx-auto px-6 md:px-16 md:py-32" id="faq">
+      <section
+        class="faq-section mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32"
+        id="faq"
+      >
         <div class="max-w-[750px] mx-auto">
           <!-- Section Header Block -->
           <div class="text-center mb-12">
@@ -345,7 +352,7 @@
      BOOKING WIZARD SECTION
 ========================= -->
       <section
-        class="booking-section max-w-[900px] mx-auto px-6 md:px-16 md:py-32 mb-20"
+        class="booking-section max-w-[900px] mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32"
         id="booking"
       >
         <div class="booking-header text-center mb-10">
@@ -472,35 +479,34 @@
     <!-- ==================================================
      FOOTER
 ================================================== -->
-    <footer class="site-footer mx-auto px-6 md:px-16 md:py-32">
-      <!-- Changed container to a single-column flex structure centered horizontally -->
+    <footer class="site-footer mx-auto px-6 md:px-10 py-16 md:py-24">
       <div
         class="max-w-[1200px] mx-auto flex flex-col items-center text-center gap-6"
       >
-        <!-- Brand Block -->
         <div>
           <span class="brand-name mt-3 footer-brand text-xl font-md">
             Essex Designs LLC
           </span>
-          <p class="footer-tagline mt-6 font-sm text-[1rem]">
+          <p class="footer-tagline mt-3 font-sm text-[1rem]">
             Marketing for people who'd rather be on the jobsite.
           </p>
+
+          <!-- Contact Link -->
+          <p class="footer-contact mt-3 font-sm text-[1rem]">
+            <a
+              href="mailto:showcase.by.gwen@gmail.com"
+              class="hover:text-[var(--color-primary)] transition-colors duration-200"
+            >
+              showcase.by.gwen@gmail.com
+            </a>
+          </p>
+
+          <!-- Copyright Block -->
+          <p class="footer-copy w-full mt-3 font-sm text-[1rem]">
+            &copy; <span id="year"></span> Essex Designs LLC. All rights
+            reserved.
+          </p>
         </div>
-
-        <!-- Contact Link -->
-        <p class="footer-contact mt-3 font-sm text-[1rem]">
-          <a
-            href="mailto:showcase.by.gwen@gmail.com"
-            class="hover:text-[var(--color-primary)] transition-colors duration-200"
-          >
-            showcase.by.gwen@gmail.com
-          </a>
-        </p>
-
-        <!-- Copyright Block -->
-        <p class="footer-copy w-full mt-3 font-sm text-[1rem]">
-          &copy; <span id="year"></span> Essex Designs LLC. All rights reserved.
-        </p>
       </div>
     </footer>
 
