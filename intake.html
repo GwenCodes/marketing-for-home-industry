@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Spotlight Pack — Intake | Essex Designs LLC</title>
+    <meta
+      name="description"
+      content="Book your Project Spotlight Pack. Submit your info, pick a package, and send your project photos."
+    />
+
+    <!-- Fonts (same as index.html) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind (Spacing, Responsiveness, & Grid/Flex Layouts) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        corePlugins: { preflight: false },
+      };
+    </script>
+
+    <!-- Reuses the same stylesheet as index.html — place this file in the same folder -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ==================================================
+     NAVIGATION (same as index.html, so the page feels native to the site)
+================================================== -->
+    <header class="site-header" id="siteHeader">
+      <div
+        class="nav-inner max-w-[1200px] mx-auto px-6 md:px-10 py-4 flex flex-col md:flex-row md:items-center md:justify-between"
+      >
+        <div class="flex items-center justify-between w-full md:w-auto">
+          <a href="index.html#home" class="brand flex flex-col">
+            <span class="brand-name">Essex Designs LLC</span>
+            <span class="brand-sub mt-1">Web &amp; Content Studio</span>
+          </a>
+
+          <button
+            class="menu-toggle md:hidden"
+            id="menuToggle"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        <nav
+          class="main-nav flex-col gap-2 mt-4 md:mt-0 p-2 md:p-0 border-b border-solid md:border-none md:flex md:flex-row md:items-center"
+          id="mainNav"
+        >
+          <a href="index.html#audience" class="px-3 py-2">Who It's For</a>
+          <a href="index.html#spotlight-pack" class="px-3 py-2">The PSP</a>
+          <a href="index.html" class="px-3 py-2">Back to Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==================================================
+     PROJECT SPOTLIGHT PACK — INTAKE FORM
+================================================== -->
+      <section
+        class="intake-section w-full px-6 md:px-10 py-16 md:py-24"
+        id="intake"
+      >
+        <div class="max-w-[600px] mx-auto">
+          <div class="text-center mb-10">
+            <p class="eyebrow">Get started</p>
+            <h2 class="mt-2">Project Spotlight Pack Intake</h2>
+            <p class="section-sub mt-3">
+              Fill this out and I'll follow up to confirm your booking.
+            </p>
+          </div>
+
+          <form
+            id="intakeForm"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+            novalidate
+          >
+            <!-- STEP 1: CONTACT INFO -->
+            <div class="intake-block">
+              <h3 class="mb-4">Your Information</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  class="booking-input"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  class="booking-input"
+                  required
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  class="booking-input md:col-span-2"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- STEP 2: PACKAGE SELECTION -->
+            <div class="intake-block mt-10">
+              <h3 class="mb-4">Pick a Service</h3>
+
+              <label for="packageSelect" class="sr-only"
+                >Select a package</label
+              >
+              <select
+                id="packageSelect"
+                name="package"
+                class="booking-input"
+                required
+              >
+                <option value="" disabled selected>Choose a package…</option>
+                <option value="Starter">Starter — $599</option>
+                <option value="Growth">Growth — $1199</option>
+              </select>
+
+              <!-- Starter description -->
+              <div class="package-description mt-4" id="desc-Starter" hidden>
+                <p>
+                  <strong>Starter — $599.</strong> Send 5 photos, get 8
+                  Instagram posts: project update, feature material,
+                  educational, and inspirational content.
+                </p>
+              </div>
+
+              <!-- Growth description -->
+              <div class="package-description mt-4" id="desc-Growth" hidden>
+                <p>
+                  <strong>Growth — $1199.</strong> Send 10 photos, get 16
+                  Instagram posts (project update, feature material,
+                  educational, inspirational) plus a 30-minute Brand Strategy
+                  Session to identify your highest-value buyer, most profitable
+                  project type, and market position.
+                </p>
+              </div>
+            </div>
+
+            <!-- STEP 3: PHOTOS -->
+            <div class="intake-block mt-10" id="photoBlock" hidden>
+              <h3 class="mb-4" id="photoHeading">Upload Your Photos</h3>
+              <p class="section-sub mb-3" id="photoInstructions"></p>
+              <input
+                type="url"
+                id="photoLink"
+                name="photo_link"
+                placeholder="Paste your Google Drive or Dropbox folder link"
+                class="booking-input w-full"
+              />
+              <p class="field-hint mt-2">
+                Set folder sharing to "Anyone with the link can view" before
+                pasting.
+              </p>
+            </div>
+
+            <!-- STEP 4: PAYMENT -->
+            <div class="intake-block mt-10">
+              <h3 class="mb-4">Payment</h3>
+              <p class="section-sub mb-4">
+                Your project starts once payment is received. Complete payment
+                below to confirm your booking.
+              </p>
+
+              <div id="paypal-container-X6TAXT6M497H2"></div>
+
+              <label class="checkbox-row mt-6">
+                <input type="checkbox" name="payment_confirmed" required />
+                I understand my project starts once payment is received.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-8 w-full">
+              Submit Intake
+            </button>
+          </form>
+
+          <div id="intakeSuccess" class="mt-6 text-center" hidden>
+            <p>
+              <strong>Got it — thanks!</strong> I'll be in touch shortly to
+              confirm your booking.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================================================
+     FOOTER (same as index.html)
+================================================== -->
+    <footer class="site-footer mx-auto px-6 md:px-10 py-16 md:py-24">
+      <div
+        class="max-w-[1200px] mx-auto flex flex-col items-center text-center gap-6"
+      >
+        <div>
+          <span class="brand-name mt-3 footer-brand text-xl font-md">
+            Essex Designs LLC
+          </span>
+          <p class="footer-tagline mt-3 font-sm text-[1rem]">
+            Marketing for people who'd rather be on the jobsite.
+          </p>
+
+          <p class="footer-contact mt-3 font-sm text-[1rem]">
+            <a
+              href="mailto:showcase.by.gwen@gmail.com"
+              class="hover:text-[var(--color-primary)] transition-colors duration-200"
+            >
+              showcase.by.gwen@gmail.com
+            </a>
+          </p>
+
+          <p class="footer-copy w-full mt-3 font-sm text-[1rem]">
+            &copy; <span id="year"></span> Essex Designs LLC. All rights
+            reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAiW8gXkoWbZBfrDzNt-_hV5iihN9H6etrdX4ewmiQEaKQxh9zKeNlzprZudbMPfJc6TVUgMW-xI3lTow&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+    <script>
+      paypal
+        .HostedButtons({ hostedButtonId: "X6TAXT6M497H2" })
+        .render("#paypal-container-X6TAXT6M497H2");
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+      (function () {
+        const packageSelect = document.getElementById("packageSelect");
+        const descStarter = document.getElementById("desc-Starter");
+        const descGrowth = document.getElementById("desc-Growth");
+        const photoBlock = document.getElementById("photoBlock");
+        const photoHeading = document.getElementById("photoHeading");
+        const photoInstructions = document.getElementById("photoInstructions");
+        const photoLink = document.getElementById("photoLink");
+        const form = document.getElementById("intakeForm");
+
+        const PACKAGES = {
+          Starter: { count: 5, desc: descStarter },
+          Growth: { count: 10, desc: descGrowth },
+        };
+
+        packageSelect.addEventListener("change", () => {
+          const choice = packageSelect.value;
+
+          descStarter.hidden = true;
+          descGrowth.hidden = true;
+
+          if (!choice) {
+            photoBlock.hidden = true;
+            photoLink.required = false;
+            return;
+          }
+
+          const pkg = PACKAGES[choice];
+          pkg.desc.hidden = false;
+
+          photoBlock.hidden = false;
+          photoLink.required = true;
+          photoHeading.textContent = `Upload Your Photos (${pkg.count} photos)`;
+          photoInstructions.textContent = `The ${choice} package requires ${pkg.count} photos. Upload them to a Google Drive or Dropbox folder and paste the link below.`;
+        });
+
+        form.addEventListener("submit", function (e) {
+          if (packageSelect.value && !photoLink.value.trim()) {
+            e.preventDefault();
+            photoLink.focus();
+            return;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
