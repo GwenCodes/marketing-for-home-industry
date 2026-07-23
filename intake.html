@@ -27,6 +27,10 @@
 
     <!-- Reuses the same stylesheet as index.html — place this file in the same folder -->
     <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://www.paypalobjects.com/ncp/cart/cart.js"
+      data-merchant-id="UCVETW7CAX34G"
+    ></script>
   </head>
   <body>
     <!-- ==================================================
@@ -130,8 +134,8 @@
                 required
               >
                 <option value="" disabled selected>Choose a package…</option>
-                <option value="Starter">Starter — $599</option>
-                <option value="Growth">Growth — $1199</option>
+                <option value="Starter">Starter</option>
+                <option value="Growth">Growth</option>
               </select>
 
               <!-- Starter description -->
@@ -174,13 +178,33 @@
 
             <!-- STEP 4: PAYMENT -->
             <div class="intake-block mt-10">
-              <h3 class="mb-4">Payment</h3>
-              <p class="section-sub mb-4">
-                Your project starts once payment is received. Complete payment
-                below to confirm your booking.
-              </p>
+              <h3 class="mb-4">Paypal/Venmo Payment</h3>
 
-              <div id="paypal-container-X6TAXT6M497H2"></div>
+              <p class="section-sub mb-4">
+                Your project starts once payment is received.
+              </p>
+              <!-- PayPal button -->
+              <!-- Starter -->
+              <paypal-add-to-cart-button
+                data-id="X6ZW3JX38EP3A"
+              ></paypal-add-to-cart-button>
+              <script>
+                cartPaypal.AddToCart({ id: "X6ZW3JX38EP3A" });
+              </script>
+
+              <!--Growth -->
+              <paypal-add-to-cart-button
+                data-id="WF6A57FV3GJPE"
+              ></paypal-add-to-cart-button>
+              <script>
+                cartPaypal.AddToCart({ id: "WF6A57FV3GJPE" });
+              </script>
+
+              <!--view cart -->
+              <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+              <script>
+                cartPaypal.Cart({ id: "pp-view-cart" });
+              </script>
 
               <label class="checkbox-row mt-6">
                 <input type="checkbox" name="payment_confirmed" required />
