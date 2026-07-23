@@ -14,6 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const bookNowBtn = document.querySelector("#book-now"); // ensure this ID/class matches your HTML
+
+    if (bookNowBtn) {
+      bookNowBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Your booking logic here (e.g., opening a modal, scrolling, or redirecting)
+        console.log("Book Now button clicked!");
+      });
+    }
+  });
+
   /* ---------- mobile menu toggle ---------- */
   const menuToggle = document.getElementById("menuToggle");
   const mainNav = document.getElementById("mainNav");
