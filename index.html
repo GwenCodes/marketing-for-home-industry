@@ -2,63 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Essex Designs LLC — Content That Gets Your Next Job Booked</title>
-
     <meta
       name="description"
       content="Send photos of your projects and get a month of ready-to-post social media content. Perfect for contractors, remodelers, and designers who want to stay visible with local clients without adding another task to their week."
     />
 
     <!-- ==================================================
-         FONTS
+         MAIN STYLESHEET
     ================================================== -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
-    />
-
-    <!-- ==================================================
-         MAIN STYLESHEET
-    ================================================== -->
-
+    >
     <script type="module" src="/src/script.js"></script>
+    
   </head>
-
   <body>
     <!-- ==================================================
-         NAVIGATION
-    ================================================== -->
-
+     NAVIGATION
+     Matches CSS: NAVIGATION
+================================================== -->
     <header class="site-header" id="siteHeader">
+      <!-- Changed to flex-col to allow stacking on mobile, md:flex-row restores desktop behavior -->
       <div
         class="nav-inner max-w-[1200px] mx-auto px-6 md:px-10 py-4 flex flex-col md:flex-row md:items-center md:justify-between"
       >
-        <!-- Logo + Mobile Menu Button -->
-
+        <!-- Row container for Logo and Hamburger on mobile -->
         <div class="flex items-center justify-between w-full md:w-auto">
           <a href="#home" class="brand flex flex-col">
-            <span class="brand-name"> Essex Designs LLC </span>
-
-            <span class="brand-sub mt-1"> Web &amp; Content Studio </span>
+            <span class="brand-name">Essex Designs LLC</span>
+            <span class="brand-sub mt-1">Web &amp; Content Studio</span>
           </a>
 
-          <!-- Mobile Menu Button -->
-
           <button
-            type="button"
             class="menu-toggle md:hidden"
             id="menuToggle"
             aria-label="Open menu"
             aria-expanded="false"
-            aria-controls="mainNav"
           >
             <span></span>
             <span></span>
@@ -66,126 +51,92 @@
           </button>
         </div>
 
-        <!-- Navigation -->
-
+        <!-- Menu drops perfectly below the top row on mobile -->
         <nav
           class="main-nav flex-col gap-2 mt-4 md:mt-0 p-2 md:p-0 border-b border-solid md:border-none md:flex md:flex-row md:items-center"
           id="mainNav"
         >
-          <a href="#audience" class="px-3 py-2"> Who It's For </a>
-
-          <a href="#spotlight-pack" class="px-3 py-2"> The PSP </a>
-
-          <a href="#faq" class="px-3 py-2"> FAQ </a>
-
+          <a href="#audience" class="px-3 py-2">Who It's For</a>
+          <a href="#spotlight-pack" class="px-3 py-2">The PSP</a>
           <a
             href="/intake.html"
             class="cta-button hidden md:inline-block px-3 py-2 nav-cta-link"
+            >Book Now</a
           >
-            Book Now
-          </a>
         </nav>
       </div>
     </header>
 
-    <!-- ==================================================
-         MAIN CONTENT
-    ================================================== -->
-
     <main>
       <!-- ==================================================
-           HERO
-      ================================================== -->
-
+     HERO
+     Matches CSS: HERO
+================================================== -->
       <section
         class="hero-section max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32"
         id="home"
       >
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <!-- Hero Copy -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div class="hero-copy order-2 lg:order-1">
+              <p class="eyebrow">Marketing for the trades</p>
+              <h1 class="hero-headline mt-[0.7rem]">
+                Your last job can bring in your next lead, if you post it.
+              </h1>
+              <p class="hero-sub mt-5 max-w-[540px]">
+                Send photos of your project. I'll turn them into ready-to-post
+                pieces of content for Instagram.
+              </p>
 
-          <div class="hero-copy order-2 lg:order-1">
-            <p class="eyebrow">Marketing for the trades</p>
-
-            <h1 class="hero-headline mt-[0.7rem]">
-              Your last job can bring in your next lead, if you post it.
-            </h1>
-
-            <p class="hero-sub mt-5 max-w-[540px]">
-              Send photos of your project. I'll turn them into ready-to-post
-              pieces of content for Instagram.
-            </p>
-
-            <div class="flex flex-wrap gap-4 mt-8">
-              <a href="/intake.html" class="btn btn-primary cta-button">
-                Get the Project Spotlight Pack
-              </a>
-
-              <a href="#spotlight-pack" class="btn btn-secondary">
-                See What's Included
-              </a>
+              <div class="flex flex-wrap gap-4 mt-8">
+                <a href="/intake.html" class="btn btn-primary cta-button"
+                  >Get the Project Spotlight Pack</a
+                >
+                <a href="#spotlight-pack" class="btn btn-secondary"
+                  >See What's Included</a
+                >
+              </div>
             </div>
-          </div>
 
-          <!-- Hero Image -->
-
-          <div class="hero-visual order-1 lg:order-2 w-full">
-            <img
-              src="/src/images/project-spotlight-pack-hero.png"
-              alt="Project Spotlight Pack visual showing social media content created from a completed home improvement project"
-              class="w-full h-auto object-cover rounded-lg"
-            />
+            <div class="hero-visual order-1 lg:order-2 w-full">
+              <img
+                src="/src/images/project-spotlight-pack-hero.png"
+                alt="Project Spotlight visual"
+                class="w-full h-auto object-cover rounded-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       <!-- ==================================================
-           AUDIENCE
-      ================================================== -->
-
+     AUDIENCE
+================================================== -->
       <section class="audience-section w-full" id="audience">
-        <div
-          class="max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32"
-        >
+        <div class="max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32">
           <div>
             <h2>Who this is for</h2>
-
             <p class="section-sub mt-4 text-[1.05rem]">
               If any of this sounds familiar, you're in the right place.
             </p>
           </div>
 
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10"
-          >
-            <!-- Audience Card 1 -->
-
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             <div class="audience-card p-7">
               <h3>General Contractors &amp; Remodelers</h3>
-
               <p class="mt-3">
-                You finish a beautiful renovation, snap a photo for your
-                records, and that's the last anyone sees of it.
+                You finish a beautiful renovation, snap a photo for your records,
+                and that's the last anyone sees of it.
               </p>
             </div>
-
-            <!-- Audience Card 2 -->
-
             <div class="audience-card p-7">
               <h3>Interior Designers</h3>
-
               <p class="mt-3">
-                Your portfolio is full of finished rooms, but your feed is
-                empty. Clients don't know how they will benefit from your
-                services.
+                Your portfolio is full of finished rooms, but your feed is empty.
+                Clients don't know how they will benefit from your services.
               </p>
             </div>
-
-            <!-- Audience Card 3 -->
-
             <div class="audience-card p-7 sm:col-span-2 lg:col-span-1">
               <h3>Architects &amp; Design-Build Firms</h3>
-
               <p class="mt-3">
                 Your work speaks for itself, if only people knew about it.
               </p>
@@ -195,12 +146,10 @@
       </section>
 
       <!-- ==================================================
-           SERVICES / PRICING
-      ================================================== -->
-
+     SERVICES / PRICING
+================================================== -->
       <section
         class="services-section mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32 border-t border-solid border-[var(--color-light)]"
-        id="services"
       >
         <h2 id="spotlight-pack" class="text-center">
           The Project Spotlight Pack
@@ -209,14 +158,10 @@
         <div
           class="max-w-[1000px] mx-auto grid lg:grid-cols-2 gap-5 md:gap-10 mt-16"
         >
-          <!-- ==================================================
-               STARTER
-          ================================================== -->
-
+          <!-- Starter -->
           <div class="investment-card p-12 border rounded-xl mx-auto">
             <div class="flex justify-between items-center">
               <h3>Starter</h3>
-
               <h3>$599</h3>
             </div>
 
@@ -224,21 +169,16 @@
               <div>
                 <h4 class="font-semibold text-gray-900">Send 5 photos</h4>
               </div>
-
               <div>
                 <p>Get 8 Instagram posts targeting homeowners in your city.</p>
               </div>
 
               <div>
                 <h4 class="font-semibold text-gray-900">Includes</h4>
-
                 <ul class="list-disc ml-5 mt-2 space-y-1">
                   <li>Project update posts</li>
-
                   <li>Feature material posts</li>
-
                   <li>Educational posts</li>
-
                   <li>Inspirational posts</li>
                 </ul>
               </div>
@@ -254,36 +194,26 @@
             </div>
           </div>
 
-          <!-- ==================================================
-               GROWTH
-          ================================================== -->
-
+          <!-- Growth -->
           <div class="investment-card p-12 border rounded-xl mx-auto">
             <div class="flex justify-between items-center">
               <h3>Growth</h3>
-
-              <h3>$1,199</h3>
+              <h3>$1199</h3>
             </div>
-
             <div class="mt-6 text-gray-600 space-y-4">
               <div>
                 <h4 class="font-semibold text-gray-900">Send 10 photos</h4>
               </div>
-
               <div>
                 <p>Get 16 Instagram posts targeting homeowners in your city.</p>
               </div>
 
               <div>
                 <h4 class="font-semibold text-gray-900">Includes</h4>
-
                 <ul class="list-disc ml-5 mt-2 space-y-1">
                   <li>Project update posts</li>
-
                   <li>Feature material posts</li>
-
                   <li>Educational posts</li>
-
                   <li>Inspirational posts</li>
                 </ul>
               </div>
@@ -292,12 +222,9 @@
                 <h4 class="font-semibold text-gray-900">
                   Brand Strategy Session (30 min)
                 </h4>
-
                 <ul class="list-disc ml-5 mt-2 space-y-1">
                   <li>Identify your highest-value buyer</li>
-
                   <li>Pinpoint your most profitable service or project type</li>
-
                   <li>
                     Define your market position (luxury, speed, craft,
                     authority, etc.)
@@ -317,49 +244,37 @@
           </div>
         </div>
       </section>
-
       <!-- ==================================================
-           ABOUT
-      ================================================== -->
-
+     ABOUT
+================================================== -->
       <section
         class="about-section mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32"
-        id="about"
       >
         <div
           class="max-w-[950px] mx-auto grid grid-cols-1 md:grid-cols-[220px_1fr] gap-20 items-center px-4 sm:px-12 text-center md:text-left"
         >
-          <!-- About Photo -->
-
           <div class="about-photo-wrap justify-self-center mb-4 md:mb-0">
             <div class="about-photo p-[12px_12px_28px]">
               <img
                 src="/src/images/about-photo.png"
-                alt="Gwen from Essex Designs LLC"
+                alt="About photo"
                 class="about-photo-img"
               />
             </div>
-
             <span class="about-tape about-tape-l"></span>
-
             <span class="about-tape about-tape-r"></span>
           </div>
 
-          <!-- About Copy -->
-
           <div class="about-copy">
             <p class="eyebrow">Who's behind this</p>
-
             <h2 class="mt-[0.4rem]">
               You build the projects. I'll build the buzz.
             </h2>
-
             <p class="mt-4">
               Hi, I'm Gwen. I create content for people who are excellent at
               their trade and have absolutely no time to write captions about
               it.
             </p>
-
             <p class="mt-4">
               A steady stream of leads starts with visibility. The fastest way
               to get noticed locally is to use the project photos already in
@@ -369,63 +284,51 @@
           </div>
         </div>
       </section>
-
       <!-- ==================================================
-           FAQ
-      ================================================== -->
-
+     FAQ
+================================================== -->
       <section
         class="faq-section mx-auto px-6 md:px-10 py-16 md:py-24 lg:py-32"
         id="faq"
       >
         <div class="max-w-[750px] mx-auto">
-          <!-- Section Header -->
-
+          <!-- Section Header Block -->
           <div class="text-center mb-12">
             <h2 class="mt-2 font-extrabold tracking-tight">
               Frequently Asked Questions
             </h2>
           </div>
 
-          <!-- FAQ Accordion -->
-
+          <!-- Accordion Wrapper List -->
           <div class="faq-accordion-group space-y-4">
-            <!-- FAQ 1 -->
-
             <details
               class="faq-item bg-[var(--color-cream-soft)] border border-solid border-[var(--color-light)] rounded-[var(--radius)] overflow-hidden"
             >
               <summary
                 class="flex justify-between items-center p-5 font-semibold text-[1.05rem] text-gray-900 cursor-pointer list-none select-none"
               >
-                <span> Do I need professional photos? </span>
-
-                <span class="faq-arrow-icon" aria-hidden="true"></span>
+                <span>Do I need professional photos?</span>
+                <span class="faq-arrow-icon"></span>
               </summary>
-
               <div class="faq-content p-5 pt-0">
                 <p class="mt-3 text-[1rem] leading-relaxed text-gray-600">
                   No. Smartphone photos work great. A clear shot before you
                   start and after you finish are great. Progress photos as the
-                  work happens are also helpful. Homeowners love seeing behind
+                  work happens is also helpful. Homeowners love seeing behind
                   the scenes.
                 </p>
               </div>
             </details>
 
-            <!-- FAQ 2 -->
-
             <details
               class="faq-item bg-[var(--color-cream-soft)] border border-solid border-[var(--color-light)] rounded-[var(--radius)] overflow-hidden"
             >
               <summary
                 class="flex justify-between items-center p-5 font-semibold text-[1.05rem] text-gray-900 cursor-pointer list-none select-none"
               >
-                <span> Do you post the content for me? </span>
-
-                <span class="faq-arrow-icon" aria-hidden="true"></span>
+                <span>Do you post the content for me?</span>
+                <span class="faq-arrow-icon"></span>
               </summary>
-
               <div class="faq-content p-5 pt-0">
                 <p class="mt-3 text-[1rem] leading-relaxed text-gray-600">
                   Not currently. We provide ready-to-post content that you
@@ -435,19 +338,15 @@
               </div>
             </details>
 
-            <!-- FAQ 3 -->
-
             <details
               class="faq-item bg-[var(--color-cream-soft)] border border-solid border-[var(--color-light)] rounded-[var(--radius)] overflow-hidden"
             >
               <summary
                 class="flex justify-between items-center p-5 font-semibold text-[1.05rem] text-gray-900 cursor-pointer list-none select-none"
               >
-                <span> How quickly will I receive my content? </span>
-
-                <span class="faq-arrow-icon" aria-hidden="true"></span>
+                <span>How quickly will I receive my content?</span>
+                <span class="faq-arrow-icon"></span>
               </summary>
-
               <div class="faq-content p-5 pt-0">
                 <p class="mt-3 text-[1rem] leading-relaxed text-gray-600">
                   Within 14 business days of receiving your project information
@@ -457,13 +356,12 @@
             </details>
           </div>
         </div>
-      </section>
+      </section>      
     </main>
 
     <!-- ==================================================
-         FOOTER
-    ================================================== -->
-
+     FOOTER
+================================================== -->
     <footer class="site-footer mx-auto px-6 md:px-10 py-16 md:py-24">
       <div
         class="max-w-[1200px] mx-auto flex flex-col items-center text-center gap-6"
@@ -472,13 +370,11 @@
           <span class="brand-name mt-3 footer-brand text-xl font-md">
             Essex Designs LLC
           </span>
-
           <p class="footer-tagline mt-3 font-sm text-[1rem]">
             Marketing for people who'd rather be on the jobsite.
           </p>
 
-          <!-- Contact -->
-
+          <!-- Contact Link -->
           <p class="footer-contact mt-3 font-sm text-[1rem]">
             <a
               href="mailto:showcase.by.gwen@gmail.com"
@@ -488,23 +384,15 @@
             </a>
           </p>
 
-          <!-- Copyright -->
-
+          <!-- Copyright Block -->
           <p class="footer-copy w-full mt-3 font-sm text-[1rem]">
-            &copy;
-            <span id="year"></span>
-            Essex Designs LLC. All rights reserved.
+            &copy; <span id="year"></span> Essex Designs LLC. All rights
+            reserved.
           </p>
         </div>
       </div>
     </footer>
 
-    <!-- ==================================================
-         MAIN JAVASCRIPT
-         
-         In Vite, script.js imports styles.css.
-         ================================================== -->
-
-    <script type="module" src="/src/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
